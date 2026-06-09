@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "ultima_atualizacao": "09/06/2026 19:24:53",
     "kpis": {
@@ -44,4 +45,52 @@
             }
         }
     ]
+=======
+{
+    "ultima_atualizacao": "08/06/2026 19:08:52",
+    "kpis": {
+        "fundos_monitorados": 3,
+        "taxa_global": 45.26,
+        "total_registros": 780,
+        "total_falhas": 427
+    },
+    "fundos": [
+        {
+            "nome": "Alvorada",
+            "taxa_sucesso": 53.08,
+            "falhas": 122,
+            "total": 260,
+            "dias_auditados": 66,
+            "ultima_falha": {
+                "data": "03/03/2026",
+                "arquivo": "Liquidados",
+                "motivo": "Data incorreta (2026-03-03 00:0). Esperado: 03/03/2026"
+            }
+        },
+        {
+            "nome": "Opera",
+            "taxa_sucesso": 52.31,
+            "falhas": 124,
+            "total": 260,
+            "dias_auditados": 66,
+            "ultima_falha": {
+                "data": "03/03/2026",
+                "arquivo": "Liquidados",
+                "motivo": "Data incorreta (2026-03-03 00:0). Esperado: 03/03/2026"
+            }
+        },
+        {
+            "nome": "Ártico",
+            "taxa_sucesso": 30.38,
+            "falhas": 181,
+            "total": 260,
+            "dias_auditados": 66,
+            "ultima_falha": {
+                "data": "02/03/2026",
+                "arquivo": "Carteira",
+                "motivo": "Arquivo com data 02-03 não encontrado"
+            }
+        }
+    ]
+>>>>>>> 255fae59a2ba97a65a8b2384f7dd5fd4ec44b10d
 }
