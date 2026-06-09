@@ -1,0 +1,424 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Auditoria de Fundos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#f4f6f9;
+    color:#222;
+}
+
+header{
+    background:#1f2937;
+    color:white;
+    padding:25px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    font-size:28px;
+}
+
+#ultimaAtualizacao{
+    font-size:14px;
+    opacity:.8;
+}
+
+.kpis{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:25px 40px;
+}
+
+.kpi{
+    background:white;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.kpiTitulo{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.kpiValor{
+    font-size:34px;
+    font-weight:bold;
+}
+
+.areaFundos{
+    padding:0 40px 30px;
+}
+
+.areaFundos h2{
+    margin-bottom:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    padding:25px;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+    border-left:8px solid #16a34a;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+.card.ativo{
+    border:3px solid #2563eb;
+}
+
+.card.erro{
+    border-left:8px solid #dc2626;
+}
+
+.cardNome{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.cardLinha{
+    margin:8px 0;
+}
+
+.detalhes{
+    padding:0 40px 40px;
+}
+
+.painel{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+    min-height:250px;
+}
+
+#tituloPainel{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#1f2937;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+.ok{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.erro{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.msgInicial{
+    color:#666;
+    font-size:18px;
+}
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>📊 Auditoria de Fundos</h1>
+
+    <div id="ultimaAtualizacao">
+        Carregando...
+    </div>
+
+</header>
+
+<section class="kpis">
+
+    <div class="kpi">
+        <div class="kpiTitulo">Fundos Monitorados</div>
+        <div class="kpiValor" id="kpiFundos">0</div>
+    </div>
+
+    <div class="kpi">
+        <div class="kpiTitulo">Taxa Média</div>
+        <div class="kpiValor" id="kpiTaxa">0%</div>
+    </div>
+
+    <div class="kpi">
+        <div class="kpiTitulo">Total Auditorias</div>
+        <div class="kpiValor" id="kpiTotal">0</div>
+    </div>
+
+</section>
+
+<section class="areaFundos">
+
+    <h2>Fundos</h2>
+
+    <div class="cards" id="cards"></div>
+
+</section>
+
+<section class="detalhes">
+
+    <div class="painel">
+
+        <h2 id="tituloPainel">
+            Selecione um fundo
+        </h2>
+
+        <div id="conteudoPainel">
+
+            <div class="msgInicial">
+                Clique em um dos fundos acima para visualizar o histórico.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+let historicoGlobal=[];
+
+async function carregar(){
+
+    const dados =
+        await fetch("dados.json")
+        .then(r=>r.json());
+
+    const historico =
+        await fetch("historico.json")
+        .then(r=>r.json());
+
+    historicoGlobal = historico;
+
+    document.getElementById(
+        "ultimaAtualizacao"
+    ).innerText =
+        "Última atualização: " +
+        dados.ultima_atualizacao;
+
+    document.getElementById(
+        "kpiFundos"
+    ).innerText =
+        dados.fundos.length;
+
+    let totalAuditorias = 0;
+    let somaTaxa = 0;
+
+    const cards =
+        document.getElementById("cards");
+
+    cards.innerHTML = "";
+
+    dados.fundos.forEach(f=>{
+
+        totalAuditorias += f.total;
+        somaTaxa += f.taxa_sucesso;
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            f.falhas > 0
+            ? "card erro"
+            : "card";
+
+        card.innerHTML = `
+
+            <div class="cardNome">
+                ${f.nome}
+            </div>
+
+            <div class="cardLinha">
+                Taxa de Sucesso:
+                <b>${f.taxa_sucesso}%</b>
+            </div>
+
+            <div class="cardLinha">
+                Falhas:
+                <b>${f.falhas}</b>
+            </div>
+
+            <div class="cardLinha">
+                Auditorias:
+                <b>${f.total}</b>
+            </div>
+
+        `;
+
+        card.onclick = () => {
+
+            document
+                .querySelectorAll(".card")
+                .forEach(c=>c.classList.remove("ativo"));
+
+            card.classList.add("ativo");
+
+            mostrarFundo(f.nome);
+
+        };
+
+        cards.appendChild(card);
+
+    });
+
+    document.getElementById(
+        "kpiTotal"
+    ).innerText =
+        totalAuditorias;
+
+    document.getElementById(
+        "kpiTaxa"
+    ).innerText =
+        (
+            somaTaxa /
+            dados.fundos.length
+        ).toFixed(2) + "%";
+
+}
+
+function mostrarFundo(nome){
+
+    const registros =
+        historicoGlobal.filter(
+            x => x.fundo === nome
+        );
+
+    document.getElementById(
+        "tituloPainel"
+    ).innerText =
+        "Histórico - " + nome;
+
+    let html = "";
+
+    html += `
+    <div>
+        Total de registros:
+        <b>${registros.length}</b>
+    </div>
+    `;
+
+    html += `
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Arquivo</th>
+                <th>Status</th>
+                <th>Motivo</th>
+            </tr>
+        </thead>
+        <tbody>
+    `;
+
+    registros
+        .slice()
+        .reverse()
+        .forEach(r=>{
+
+            const data =
+                r.data_execucao ||
+                r.data ||
+                "";
+
+            html += `
+            <tr>
+
+                <td>${data}</td>
+
+                <td>${r.arquivo}</td>
+
+                <td class="${
+                    r.status==="OK"
+                    ? "ok"
+                    : "erro"
+                }">
+                    ${r.status}
+                </td>
+
+                <td>
+                    ${r.motivo || ""}
+                </td>
+
+            </tr>
+            `;
+
+        });
+
+    html += `
+        </tbody>
+    </table>
+    `;
+
+    document.getElementById(
+        "conteudoPainel"
+    ).innerHTML =
+        html;
+
+}
+
+carregar();
+
+</script>
+
+</body>
+</html>
+```
