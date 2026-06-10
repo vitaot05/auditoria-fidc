@@ -1,30 +1,30 @@
 {
-    "ultima_atualizacao": "10/06/2026 19:19:11",
+    "ultima_atualizacao": "10/06/2026 19:49:31",
     "kpis": {
         "fundos_monitorados": 3,
-        "taxa_global": 46.39,
+        "taxa_global": 47.01,
         "total_registros": 804,
-        "total_falhas": 424
+        "total_falhas": 416
     },
     "fundos": [
         {
             "nome": "Alvorada",
-            "taxa_sucesso": 54.48,
-            "falhas": 122,
+            "taxa_sucesso": 54.85,
+            "falhas": 121,
             "avisos": 0,
             "total": 268,
             "dias_auditados": 68,
             "ultima_falha": {
-                "data": "03/03/2026",
-                "arquivo": "Liquidados",
-                "motivo": "Data incorreta (2026-03-03 00:0). Esperado: 03/03/2026"
+                "data": "19/05/2026",
+                "arquivo": "Carteira",
+                "motivo": "Fundo incorreto — esperado 'ALVORADA' em A1, encontrado 'CLIENTE: ARTICO FIDC'"
             }
         },
         {
             "nome": "Opera",
-            "taxa_sucesso": 54.1,
-            "falhas": 123,
-            "avisos": 0,
+            "taxa_sucesso": 55.6,
+            "falhas": 117,
+            "avisos": 2,
             "total": 268,
             "dias_auditados": 68,
             "ultima_falha": {
@@ -36,14 +36,14 @@
         {
             "nome": "Ártico",
             "taxa_sucesso": 30.6,
-            "falhas": 179,
-            "avisos": 7,
+            "falhas": 178,
+            "avisos": 8,
             "total": 268,
             "dias_auditados": 68,
             "ultima_falha": {
-                "data": "02/03/2026",
-                "arquivo": "Carteira",
-                "motivo": "Arquivo com data 02-03 não encontrado"
+                "data": "19/05/2026",
+                "arquivo": "Liquidados",
+                "motivo": "Data incorreta — esperado 19/05/2026, encontrado 19/05/2025"
             }
         }
     ]

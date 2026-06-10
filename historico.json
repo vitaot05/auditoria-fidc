@@ -1,546 +1,6 @@
 [
     {
         "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:51",
-        "data_auditada": "25/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:51",
-        "data_auditada": "25/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:51",
-        "data_auditada": "25/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:52",
-        "data_auditada": "22/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:55",
-        "data_auditada": "25/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:55",
-        "data_auditada": "25/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:55",
-        "data_auditada": "25/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "17:59:55",
-        "data_auditada": "22/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:19",
-        "data_auditada": "25/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:19",
-        "data_auditada": "25/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:19",
-        "data_auditada": "25/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:20",
-        "data_auditada": "22/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:22",
-        "data_auditada": "22/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (22/05/2025). Esperado: 22/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:22",
-        "data_auditada": "22/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Aquisições",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2025-05-22). Esperado: 2026-05-22"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:22",
-        "data_auditada": "22/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Data incorreta (22/05/2025). Esperado: 22/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:22",
-        "data_auditada": "21/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Carteira",
-        "status": "ERRO",
-        "motivo": "Data incorreta (DATA DE POSIÇÃO: 21/05/20). Esperado: 21/05/2026 A 21/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:23",
-        "data_auditada": "22/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:23",
-        "data_auditada": "22/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:23",
-        "data_auditada": "22/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:01:23",
-        "data_auditada": "21/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:16",
-        "data_auditada": "22/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2026-05-22 00:0). Esperado: 22/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:16",
-        "data_auditada": "22/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Aquisições",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 22-05 não encontrado"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:16",
-        "data_auditada": "22/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 22-05 não encontrado"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:17",
-        "data_auditada": "21/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:20",
-        "data_auditada": "21/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (21/05/2025). Esperado: 21/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:20",
-        "data_auditada": "21/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Aquisições",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2025-05-21). Esperado: 2026-05-21"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:20",
-        "data_auditada": "21/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Data incorreta (21/05/2025). Esperado: 21/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:20",
-        "data_auditada": "20/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Carteira",
-        "status": "ERRO",
-        "motivo": "Data incorreta (DATA DE POSIÇÃO: 20/05/20). Esperado: 20/05/2026 A 20/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:22",
-        "data_auditada": "21/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:23",
-        "data_auditada": "21/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:23",
-        "data_auditada": "21/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:02:23",
-        "data_auditada": "20/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:43",
-        "data_auditada": "21/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2026-05-21 00:0). Esperado: 21/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:43",
-        "data_auditada": "21/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:43",
-        "data_auditada": "21/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:44",
-        "data_auditada": "20/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:47",
-        "data_auditada": "20/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (20/05/2025). Esperado: 20/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:47",
-        "data_auditada": "20/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Aquisições",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2025-05-20). Esperado: 2026-05-20"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:47",
-        "data_auditada": "20/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Data incorreta (20/05/2025). Esperado: 20/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:47",
-        "data_auditada": "19/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Carteira",
-        "status": "ERRO",
-        "motivo": "Data incorreta (DATA DE POSIÇÃO: 19/05/20). Esperado: 19/05/2026 A 19/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:51",
-        "data_auditada": "20/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:51",
-        "data_auditada": "20/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:52",
-        "data_auditada": "20/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:03:52",
-        "data_auditada": "19/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Carteira",
-        "status": "ERRO",
-        "motivo": "Cliente inválido"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:06",
-        "data_auditada": "20/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Estoque",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:06",
-        "data_auditada": "20/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:13",
-        "data_auditada": "20/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:13",
-        "data_auditada": "19/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:17",
-        "data_auditada": "19/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (19/05/2025). Esperado: 19/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:17",
-        "data_auditada": "19/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Aquisições",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2025-05-19). Esperado: 2026-05-19"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:17",
-        "data_auditada": "19/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Data incorreta (19/05/2025). Esperado: 19/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:17",
-        "data_auditada": "18/05/2026",
-        "fundo": "Ártico",
-        "arquivo": "Carteira",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 18-05 não encontrado"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:19",
-        "data_auditada": "19/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2026-05-19 00:0). Esperado: 19/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:19",
-        "data_auditada": "19/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:19",
-        "data_auditada": "19/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Liquidados",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:06:19",
-        "data_auditada": "18/05/2026",
-        "fundo": "Alvorada",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:07:24",
-        "data_auditada": "19/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2026-05-19 00:0). Esperado: 19/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:07:24",
-        "data_auditada": "19/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Aquisições",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:07:24",
-        "data_auditada": "19/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Data incorreta (2026-05-19 00:0). Esperado: 19/05/2026"
-    },
-    {
-        "data_execucao": "2026-06-08",
-        "hora_execucao": "18:07:25",
-        "data_auditada": "18/05/2026",
-        "fundo": "Opera",
-        "arquivo": "Carteira",
-        "status": "OK",
-        "motivo": ""
-    },
-    {
-        "data_execucao": "2026-06-08",
         "hora_execucao": "18:07:28",
         "data_auditada": "18/05/2026",
         "fundo": "Ártico",
@@ -6157,1082 +5617,2525 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:48",
+        "hora_execucao": "19:35:38",
         "data_auditada": "09/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Estoques'"
+        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Estoques'",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:48",
+        "hora_execucao": "19:35:38",
         "data_auditada": "09/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Aquisições' (possível dia sem movimento)"
+        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Aquisições' (possível dia sem movimento)",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:48",
+        "hora_execucao": "19:35:38",
         "data_auditada": "09/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Liquidados' (possível dia sem movimento)"
+        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Liquidados' (possível dia sem movimento)",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:48",
+        "hora_execucao": "19:35:38",
         "data_auditada": "08/06/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 08-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'"
+        "motivo": "Arquivo não encontrado para 08-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:49",
+        "hora_execucao": "19:35:40",
         "data_auditada": "09/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3411,
+            "cedentes_unicos": 128,
+            "recebiveis_a_vencer": 2907,
+            "recebiveis_vencidos": 505
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:49",
+        "hora_execucao": "19:35:40",
         "data_auditada": "09/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 75,
+            "cedentes_unicos": 12
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:49",
+        "hora_execucao": "19:35:40",
         "data_auditada": "09/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 53,
+            "cedentes_unicos": 24,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 39,
+                "BAIXA POR DEPOSITO CEDENTE": 11,
+                "LIQUIDAÇÃO EM CARTÓRIO": 1,
+                "LIQUIDAÇÃO PARCIAL": 1,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:13:49",
+        "hora_execucao": "19:35:40",
         "data_auditada": "08/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:14",
+        "hora_execucao": "19:36:55",
         "data_auditada": "09/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 109257,
+            "cedentes_unicos": 1526,
+            "recebiveis_a_vencer": 99857,
+            "recebiveis_vencidos": 9401
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:14",
+        "hora_execucao": "19:36:56",
         "data_auditada": "09/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3834,
+            "cedentes_unicos": 145
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:14",
+        "hora_execucao": "19:36:58",
         "data_auditada": "09/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2530,
+            "cedentes_unicos": 477,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 2174,
+                "BAIXA POR DEPOSITO SACADO": 134,
+                "BAIXA POR DEPOSITO CEDENTE": 99,
+                "BAIXA POR RECOMPRA": 91,
+                "LIQUIDAÇÃO EM CARTÓRIO": 16,
+                "LIQUIDAÇÃO PARCIAL": 8,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 5,
+                "ABATIMENTO CONCEDIDO": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:14",
+        "hora_execucao": "19:36:58",
         "data_auditada": "08/06/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:16",
+        "hora_execucao": "19:37:08",
         "data_auditada": "08/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6351,
+            "cedentes_unicos": 93,
+            "recebiveis_a_vencer": 5923,
+            "recebiveis_vencidos": 429
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:16",
+        "hora_execucao": "19:37:08",
         "data_auditada": "08/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 39,
+            "cedentes_unicos": 7
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:16",
+        "hora_execucao": "19:37:08",
         "data_auditada": "08/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 292,
+            "cedentes_unicos": 23,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 155,
+                "BAIXA POR DEPOSITO SACADO": 122,
+                "BAIXA POR DEPOSITO CEDENTE": 10,
+                "LIQUIDAÇÃO PARCIAL": 5
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:16",
+        "hora_execucao": "19:37:08",
         "data_auditada": "05/06/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 05-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'"
+        "motivo": "Arquivo não encontrado para 05-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:19",
+        "hora_execucao": "19:37:09",
         "data_auditada": "08/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3387,
+            "cedentes_unicos": 125,
+            "recebiveis_a_vencer": 2964,
+            "recebiveis_vencidos": 424
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:20",
+        "hora_execucao": "19:37:09",
         "data_auditada": "08/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 38,
+            "cedentes_unicos": 6
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:20",
+        "hora_execucao": "19:37:09",
         "data_auditada": "08/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 111,
+            "cedentes_unicos": 37,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 95,
+                "BAIXA POR DEPOSITO CEDENTE": 15,
+                "LIQUIDAÇÃO EM CARTÓRIO": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:20",
+        "hora_execucao": "19:37:09",
         "data_auditada": "05/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:43",
+        "hora_execucao": "19:37:53",
         "data_auditada": "08/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 107937,
+            "cedentes_unicos": 1525,
+            "recebiveis_a_vencer": 99032,
+            "recebiveis_vencidos": 8906
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:43",
+        "hora_execucao": "19:37:53",
         "data_auditada": "08/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3528,
+            "cedentes_unicos": 166
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:43",
+        "hora_execucao": "19:37:54",
         "data_auditada": "08/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 4560,
+            "cedentes_unicos": 558,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 4204,
+                "BAIXA POR DEPOSITO CEDENTE": 133,
+                "BAIXA POR DEPOSITO SACADO": 126,
+                "BAIXA POR RECOMPRA": 66,
+                "LIQUIDAÇÃO EM CARTÓRIO": 18,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 7,
+                "LIQUIDAÇÃO PARCIAL": 5,
+                "ABATIMENTO CONCEDIDO": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:43",
+        "hora_execucao": "19:37:54",
         "data_auditada": "05/06/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:44",
+        "hora_execucao": "19:37:57",
         "data_auditada": "05/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6599,
+            "cedentes_unicos": 89,
+            "recebiveis_a_vencer": 6304,
+            "recebiveis_vencidos": 296
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:44",
+        "hora_execucao": "19:37:57",
         "data_auditada": "05/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 538,
+            "cedentes_unicos": 7
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:44",
+        "hora_execucao": "19:37:57",
         "data_auditada": "05/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 164,
+            "cedentes_unicos": 19,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 114,
+                "BAIXA POR DEPOSITO SACADO": 45,
+                "LIQUIDAÇÃO EM CARTÓRIO": 4,
+                "LIQUIDAÇÃO PARCIAL": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:44",
+        "hora_execucao": "19:37:57",
         "data_auditada": "03/06/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:45",
+        "hora_execucao": "19:37:58",
         "data_auditada": "05/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3460,
+            "cedentes_unicos": 127,
+            "recebiveis_a_vencer": 3052,
+            "recebiveis_vencidos": 409
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:45",
+        "hora_execucao": "19:37:58",
         "data_auditada": "05/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 81,
+            "cedentes_unicos": 11
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:45",
+        "hora_execucao": "19:37:58",
         "data_auditada": "05/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 77,
+            "cedentes_unicos": 31,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 62,
+                "BAIXA POR DEPOSITO CEDENTE": 8,
+                "BAIXA POR RECOMPRA": 5,
+                "LIQUIDAÇÃO EM CARTÓRIO": 1,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:14:45",
+        "hora_execucao": "19:37:58",
         "data_auditada": "03/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:16",
+        "hora_execucao": "19:38:43",
         "data_auditada": "05/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 108956,
+            "cedentes_unicos": 1527,
+            "recebiveis_a_vencer": 100404,
+            "recebiveis_vencidos": 8553
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:16",
+        "hora_execucao": "19:38:44",
         "data_auditada": "05/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 5505,
+            "cedentes_unicos": 214
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:16",
+        "hora_execucao": "19:38:45",
         "data_auditada": "05/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 3760,
+            "cedentes_unicos": 575,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 3075,
+                "BAIXA POR DEPOSITO SACADO": 243,
+                "BAIXA POR DEPOSITO CEDENTE": 190,
+                "BAIXA DE CHEQUE": 133,
+                "BAIXA POR RECOMPRA": 89,
+                "LIQUIDAÇÃO EM CARTÓRIO": 17,
+                "LIQUIDAÇÃO PARCIAL": 6,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 5,
+                "ABATIMENTO CONCEDIDO": 2
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:16",
+        "hora_execucao": "19:38:45",
         "data_auditada": "03/06/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:18",
+        "hora_execucao": "19:38:47",
         "data_auditada": "03/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6224,
+            "cedentes_unicos": 94,
+            "recebiveis_a_vencer": 5900,
+            "recebiveis_vencidos": 325
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:18",
+        "hora_execucao": "19:38:47",
         "data_auditada": "03/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 73,
+            "cedentes_unicos": 8
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:18",
+        "hora_execucao": "19:38:47",
         "data_auditada": "03/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 143,
+            "cedentes_unicos": 21,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 96,
+                "BAIXA POR DEPOSITO SACADO": 39,
+                "BAIXA POR DEPOSITO CEDENTE": 4,
+                "LIQUIDAÇÃO EM CARTÓRIO": 2,
+                "LIQUIDAÇÃO PARCIAL": 2
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:18",
+        "hora_execucao": "19:38:47",
         "data_auditada": "02/06/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:19",
+        "hora_execucao": "19:38:48",
         "data_auditada": "03/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3455,
+            "cedentes_unicos": 125,
+            "recebiveis_a_vencer": 3047,
+            "recebiveis_vencidos": 409
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:19",
+        "hora_execucao": "19:38:48",
         "data_auditada": "03/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 99,
+            "cedentes_unicos": 10
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:19",
+        "hora_execucao": "19:38:48",
         "data_auditada": "03/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 40,
+            "cedentes_unicos": 21,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 38,
+                "BAIXA POR RECOMPRA": 2
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:19",
+        "hora_execucao": "19:38:48",
         "data_auditada": "02/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:48",
+        "hora_execucao": "19:39:31",
         "data_auditada": "03/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 107198,
+            "cedentes_unicos": 1528,
+            "recebiveis_a_vencer": 98282,
+            "recebiveis_vencidos": 8917
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:48",
+        "hora_execucao": "19:39:31",
         "data_auditada": "03/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3489,
+            "cedentes_unicos": 176
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:48",
+        "hora_execucao": "19:39:32",
         "data_auditada": "03/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2981,
+            "cedentes_unicos": 495,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 1984,
+                "BAIXA DE CHEQUE": 327,
+                "BAIXA POR DEPOSITO SACADO": 313,
+                "BAIXA POR RECOMPRA": 228,
+                "BAIXA POR DEPOSITO CEDENTE": 110,
+                "LIQUIDAÇÃO EM CARTÓRIO": 14,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 5
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:48",
+        "hora_execucao": "19:39:32",
         "data_auditada": "02/06/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:50",
+        "hora_execucao": "19:39:34",
         "data_auditada": "02/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6292,
+            "cedentes_unicos": 89,
+            "recebiveis_a_vencer": 5975,
+            "recebiveis_vencidos": 318
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:50",
+        "hora_execucao": "19:39:34",
         "data_auditada": "02/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 230,
+            "cedentes_unicos": 7
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:50",
+        "hora_execucao": "19:39:34",
         "data_auditada": "02/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 100,
+            "cedentes_unicos": 17,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 61,
+                "BAIXA POR DEPOSITO SACADO": 27,
+                "BAIXA POR RECOMPRA": 8,
+                "BAIXA POR DEPOSITO CEDENTE": 2,
+                "LIQUIDAÇÃO PARCIAL": 2
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:50",
+        "hora_execucao": "19:39:34",
         "data_auditada": "01/06/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:51",
+        "hora_execucao": "19:39:36",
         "data_auditada": "02/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3396,
+            "cedentes_unicos": 123,
+            "recebiveis_a_vencer": 2995,
+            "recebiveis_vencidos": 402
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:51",
+        "hora_execucao": "19:39:36",
         "data_auditada": "02/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 114,
+            "cedentes_unicos": 8
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:51",
+        "hora_execucao": "19:39:36",
         "data_auditada": "02/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 44,
+            "cedentes_unicos": 22,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 36,
+                "BAIXA POR DEPOSITO CEDENTE": 5,
+                "BAIXA POR RECOMPRA": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:15:51",
+        "hora_execucao": "19:39:36",
         "data_auditada": "01/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:18",
+        "hora_execucao": "19:40:18",
         "data_auditada": "02/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 106685,
+            "cedentes_unicos": 1524,
+            "recebiveis_a_vencer": 97116,
+            "recebiveis_vencidos": 9570
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:18",
+        "hora_execucao": "19:40:19",
         "data_auditada": "02/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 2122,
+            "cedentes_unicos": 151
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:18",
+        "hora_execucao": "19:40:19",
         "data_auditada": "02/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2371,
+            "cedentes_unicos": 410,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 2226,
+                "BAIXA POR RECOMPRA": 81,
+                "BAIXA POR DEPOSITO CEDENTE": 29,
+                "LIQUIDAÇÃO EM CARTÓRIO": 22,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 7,
+                "BAIXA POR DEPOSITO SACADO": 6
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:18",
+        "hora_execucao": "19:40:19",
         "data_auditada": "01/06/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:19",
+        "hora_execucao": "19:40:24",
         "data_auditada": "01/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6160,
+            "cedentes_unicos": 89,
+            "recebiveis_a_vencer": 5931,
+            "recebiveis_vencidos": 230
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:19",
+        "hora_execucao": "19:40:24",
         "data_auditada": "01/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 207,
+            "cedentes_unicos": 9
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:19",
+        "hora_execucao": "19:40:24",
         "data_auditada": "01/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 135,
+            "cedentes_unicos": 18,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 133,
+                "BAIXA POR RECOMPRA": 2
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:19",
+        "hora_execucao": "19:40:24",
         "data_auditada": "29/05/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:20",
+        "hora_execucao": "19:40:26",
         "data_auditada": "01/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3326,
+            "cedentes_unicos": 123,
+            "recebiveis_a_vencer": 2947,
+            "recebiveis_vencidos": 380
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:20",
+        "hora_execucao": "19:40:26",
         "data_auditada": "01/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 32,
+            "cedentes_unicos": 5
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:20",
+        "hora_execucao": "19:40:26",
         "data_auditada": "01/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 116,
+            "cedentes_unicos": 34,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 102,
+                "BAIXA POR DEPOSITO CEDENTE": 11,
+                "LIQUIDAÇÃO EM CARTÓRIO": 2,
+                "LIQUIDAÇÃO PARCIAL": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:20",
+        "hora_execucao": "19:40:26",
         "data_auditada": "29/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:47",
+        "hora_execucao": "19:41:05",
         "data_auditada": "01/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 106927,
+            "cedentes_unicos": 1519,
+            "recebiveis_a_vencer": 98380,
+            "recebiveis_vencidos": 8548
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:47",
+        "hora_execucao": "19:41:05",
         "data_auditada": "01/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3725,
+            "cedentes_unicos": 157
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:47",
+        "hora_execucao": "19:41:06",
         "data_auditada": "01/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 4866,
+            "cedentes_unicos": 593,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 4423,
+                "BAIXA POR DEPOSITO SACADO": 146,
+                "BAIXA POR DEPOSITO CEDENTE": 106,
+                "BAIXA POR RECOMPRA": 85,
+                "BAIXA DE CHEQUE": 72,
+                "LIQUIDAÇÃO EM CARTÓRIO": 19,
+                "ABATIMENTO CONCEDIDO": 6,
+                "LIQUIDAÇÃO PARCIAL": 5,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 4
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:47",
+        "hora_execucao": "19:41:06",
         "data_auditada": "29/05/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:09",
         "data_auditada": "29/05/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6088,
+            "cedentes_unicos": 90,
+            "recebiveis_a_vencer": 5896,
+            "recebiveis_vencidos": 193
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:09",
         "data_auditada": "29/05/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 168,
+            "cedentes_unicos": 8
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:09",
         "data_auditada": "29/05/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 183,
+            "cedentes_unicos": 19,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 149,
+                "BAIXA POR DEPOSITO SACADO": 27,
+                "LIQUIDAÇÃO PARCIAL": 3,
+                "BAIXA POR DEPOSITO CEDENTE": 2,
+                "LIQUIDAÇÃO EM CARTÓRIO": 2
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:09",
         "data_auditada": "28/05/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 28-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'"
+        "motivo": "Arquivo não encontrado para 28-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:10",
         "data_auditada": "29/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3409,
+            "cedentes_unicos": 124,
+            "recebiveis_a_vencer": 3019,
+            "recebiveis_vencidos": 391
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:10",
         "data_auditada": "29/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 78,
+            "cedentes_unicos": 9
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:49",
+        "hora_execucao": "19:41:11",
         "data_auditada": "29/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 55,
+            "cedentes_unicos": 27,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 39,
+                "BAIXA POR DEPOSITO CEDENTE": 11,
+                "BAIXA POR RECOMPRA": 3,
+                "ABATIMENTO CONCEDIDO": 1,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:16:50",
+        "hora_execucao": "19:41:11",
         "data_auditada": "28/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:20",
+        "hora_execucao": "19:41:52",
         "data_auditada": "29/05/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 108053,
+            "cedentes_unicos": 1528,
+            "recebiveis_a_vencer": 99330,
+            "recebiveis_vencidos": 8724
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:20",
+        "hora_execucao": "19:41:53",
         "data_auditada": "29/05/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3722,
+            "cedentes_unicos": 225
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:20",
+        "hora_execucao": "19:41:53",
         "data_auditada": "29/05/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2490,
+            "cedentes_unicos": 457,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 1815,
+                "BAIXA DE CHEQUE": 222,
+                "BAIXA POR DEPOSITO SACADO": 168,
+                "BAIXA POR DEPOSITO CEDENTE": 126,
+                "BAIXA POR RECOMPRA": 115,
+                "LIQUIDAÇÃO EM CARTÓRIO": 24,
+                "LIQUIDAÇÃO PARCIAL": 10,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 10
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:20",
+        "hora_execucao": "19:41:54",
         "data_auditada": "28/05/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:22",
+        "hora_execucao": "19:41:59",
         "data_auditada": "28/05/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 6100,
+            "cedentes_unicos": 88,
+            "recebiveis_a_vencer": 5809,
+            "recebiveis_vencidos": 292
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:22",
+        "hora_execucao": "19:41:59",
         "data_auditada": "28/05/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 562,
+            "cedentes_unicos": 9
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:22",
+        "hora_execucao": "19:41:59",
         "data_auditada": "28/05/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 113,
+            "cedentes_unicos": 22,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 64,
+                "BAIXA POR DEPOSITO SACADO": 41,
+                "LIQUIDAÇÃO PARCIAL": 3,
+                "BAIXA POR DEPOSITO CEDENTE": 2,
+                "LIQUIDAÇÃO EM CARTÓRIO": 2,
+                "BAIXA POR RECOMPRA": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:22",
+        "hora_execucao": "19:41:59",
         "data_auditada": "27/05/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:24",
+        "hora_execucao": "19:42:01",
         "data_auditada": "28/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3384,
+            "cedentes_unicos": 123,
+            "recebiveis_a_vencer": 2997,
+            "recebiveis_vencidos": 388
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:24",
+        "hora_execucao": "19:42:01",
         "data_auditada": "28/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 128,
+            "cedentes_unicos": 15
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:24",
+        "hora_execucao": "19:42:01",
         "data_auditada": "28/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 55,
+            "cedentes_unicos": 20,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 32,
+                "BAIXA POR DEPOSITO CEDENTE": 21,
+                "LIQUIDAÇÃO PARCIAL": 1,
+                "BAIXA POR RECOMPRA": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:24",
+        "hora_execucao": "19:42:01",
         "data_auditada": "27/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:49",
+        "hora_execucao": "19:42:38",
         "data_auditada": "28/05/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 106801,
+            "cedentes_unicos": 1535,
+            "recebiveis_a_vencer": 97835,
+            "recebiveis_vencidos": 8967
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:49",
+        "hora_execucao": "19:42:38",
         "data_auditada": "28/05/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 4742,
+            "cedentes_unicos": 181
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:49",
+        "hora_execucao": "19:42:39",
         "data_auditada": "28/05/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2732,
+            "cedentes_unicos": 470,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 2129,
+                "BAIXA POR DEPOSITO CEDENTE": 192,
+                "BAIXA POR DEPOSITO SACADO": 161,
+                "BAIXA POR RECOMPRA": 142,
+                "BAIXA DE CHEQUE": 62,
+                "LIQUIDAÇÃO EM CARTÓRIO": 25,
+                "LIQUIDAÇÃO PARCIAL": 10,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 8,
+                "ABATIMENTO CONCEDIDO": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:49",
+        "hora_execucao": "19:42:39",
         "data_auditada": "27/05/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:51",
+        "hora_execucao": "19:42:45",
         "data_auditada": "27/05/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 5648,
+            "cedentes_unicos": 88,
+            "recebiveis_a_vencer": 5336,
+            "recebiveis_vencidos": 313
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:51",
+        "hora_execucao": "19:42:45",
         "data_auditada": "27/05/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "AVISO",
-        "motivo": "Arquivo não encontrado para 27-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Aquisições' (possível dia sem movimento)"
+        "motivo": "Arquivo não encontrado para 27-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Aquisições' (possível dia sem movimento)",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:51",
+        "hora_execucao": "19:42:45",
         "data_auditada": "27/05/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 138,
+            "cedentes_unicos": 21,
+            "ocorrencias": {
+                "BAIXA POR DEPOSITO CEDENTE": 58,
+                "LIQUIDAÇÃO NORMAL": 47,
+                "BAIXA POR DEPOSITO SACADO": 30,
+                "LIQUIDAÇÃO PARCIAL": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:51",
+        "hora_execucao": "19:42:45",
         "data_auditada": "26/05/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:52",
+        "hora_execucao": "19:42:46",
         "data_auditada": "27/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3310,
+            "cedentes_unicos": 122,
+            "recebiveis_a_vencer": 2910,
+            "recebiveis_vencidos": 401
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:52",
+        "hora_execucao": "19:42:46",
         "data_auditada": "27/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 22,
+            "cedentes_unicos": 7
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:52",
+        "hora_execucao": "19:42:46",
         "data_auditada": "27/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 99,
+            "cedentes_unicos": 27,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 52,
+                "BAIXA POR DEPOSITO CEDENTE": 44,
+                "LIQUIDAÇÃO PARCIAL": 1,
+                "LIQUIDAÇÃO EM CARTÓRIO": 1,
+                "ABATIMENTO CONCEDIDO": 1
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:17:52",
+        "hora_execucao": "19:42:46",
         "data_auditada": "26/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:27",
+        "hora_execucao": "19:43:45",
         "data_auditada": "27/05/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 104770,
+            "cedentes_unicos": 1531,
+            "recebiveis_a_vencer": 95656,
+            "recebiveis_vencidos": 9115
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:27",
+        "hora_execucao": "19:43:46",
         "data_auditada": "27/05/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3373,
+            "cedentes_unicos": 160
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:27",
+        "hora_execucao": "19:43:46",
         "data_auditada": "27/05/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2655,
+            "cedentes_unicos": 451,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 2053,
+                "BAIXA POR DEPOSITO CEDENTE": 191,
+                "BAIXA POR RECOMPRA": 187,
+                "BAIXA POR DEPOSITO SACADO": 121,
+                "BAIXA DE CHEQUE": 45,
+                "LIQUIDAÇÃO EM CARTÓRIO": 41,
+                "LIQUIDAÇÃO PARCIAL": 10,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 4,
+                "ABATIMENTO CONCEDIDO": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:27",
+        "hora_execucao": "19:43:47",
         "data_auditada": "26/05/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:28",
+        "hora_execucao": "19:43:49",
         "data_auditada": "26/05/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 5729,
+            "cedentes_unicos": 85,
+            "recebiveis_a_vencer": 5417,
+            "recebiveis_vencidos": 313
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:28",
+        "hora_execucao": "19:43:49",
         "data_auditada": "26/05/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 132,
+            "cedentes_unicos": 8
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:28",
+        "hora_execucao": "19:43:49",
         "data_auditada": "26/05/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 109,
+            "cedentes_unicos": 29,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 63,
+                "BAIXA POR DEPOSITO SACADO": 37,
+                "BAIXA POR DEPOSITO CEDENTE": 6,
+                "LIQUIDAÇÃO PARCIAL": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:28",
+        "hora_execucao": "19:43:49",
         "data_auditada": "25/05/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:29",
+        "hora_execucao": "19:43:51",
         "data_auditada": "26/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3385,
+            "cedentes_unicos": 121,
+            "recebiveis_a_vencer": 2957,
+            "recebiveis_vencidos": 429
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:29",
+        "hora_execucao": "19:43:51",
         "data_auditada": "26/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 61,
+            "cedentes_unicos": 7
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:29",
+        "hora_execucao": "19:43:51",
         "data_auditada": "26/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 59,
+            "cedentes_unicos": 30,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 52,
+                "BAIXA POR DEPOSITO CEDENTE": 7
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:18:29",
+        "hora_execucao": "19:43:51",
         "data_auditada": "25/05/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:19:11",
+        "hora_execucao": "19:44:53",
         "data_auditada": "26/05/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 104035,
+            "cedentes_unicos": 1525,
+            "recebiveis_a_vencer": 94725,
+            "recebiveis_vencidos": 9311
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:19:11",
+        "hora_execucao": "19:44:53",
         "data_auditada": "26/05/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 2908,
+            "cedentes_unicos": 156
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:19:11",
+        "hora_execucao": "19:44:54",
         "data_auditada": "26/05/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 3012,
+            "cedentes_unicos": 517,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 1944,
+                "BAIXA POR DEPOSITO SACADO": 435,
+                "BAIXA DE CHEQUE": 260,
+                "BAIXA POR DEPOSITO CEDENTE": 203,
+                "BAIXA POR RECOMPRA": 111,
+                "LIQUIDAÇÃO EM CARTÓRIO": 27,
+                "LIQUIDAÇÃO PARCIAL": 24,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 5,
+                "ABATIMENTO CONCEDIDO": 3
+            }
+        }
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "19:19:11",
+        "hora_execucao": "19:44:54",
         "data_auditada": "25/05/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",
         "status": "OK",
-        "motivo": ""
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:57",
+        "data_auditada": "25/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 5703,
+            "cedentes_unicos": 88,
+            "recebiveis_a_vencer": 5458,
+            "recebiveis_vencidos": 246
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:57",
+        "data_auditada": "25/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 62,
+            "cedentes_unicos": 9
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:57",
+        "data_auditada": "25/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 208,
+            "cedentes_unicos": 27,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 105,
+                "BAIXA POR DEPOSITO SACADO": 64,
+                "BAIXA POR DEPOSITO CEDENTE": 36,
+                "LIQUIDAÇÃO PARCIAL": 3
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:58",
+        "data_auditada": "22/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:59",
+        "data_auditada": "25/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3383,
+            "cedentes_unicos": 121,
+            "recebiveis_a_vencer": 2975,
+            "recebiveis_vencidos": 409
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:59",
+        "data_auditada": "25/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 101,
+            "cedentes_unicos": 10
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:44:59",
+        "data_auditada": "25/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 143,
+            "cedentes_unicos": 33,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 115,
+                "BAIXA POR DEPOSITO CEDENTE": 25,
+                "BAIXA POR RECOMPRA": 3
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:45:00",
+        "data_auditada": "22/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:00",
+        "data_auditada": "25/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 104107,
+            "cedentes_unicos": 1534,
+            "recebiveis_a_vencer": 94998,
+            "recebiveis_vencidos": 9110
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:00",
+        "data_auditada": "25/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3511,
+            "cedentes_unicos": 160
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:01",
+        "data_auditada": "25/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 3985,
+            "cedentes_unicos": 546,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 3828,
+                "BAIXA POR RECOMPRA": 80,
+                "BAIXA DE CHEQUE": 52,
+                "LIQUIDAÇÃO EM CARTÓRIO": 21,
+                "ABATIMENTO CONCEDIDO": 3,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 1
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:01",
+        "data_auditada": "22/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:06",
+        "data_auditada": "22/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Estoque",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 22/05/2026, encontrado 22/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:06",
+        "data_auditada": "22/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Aquisições",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 22/05/2026, encontrado 22/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:06",
+        "data_auditada": "22/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Liquidados",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 22/05/2026, encontrado 22/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:06",
+        "data_auditada": "21/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Carteira",
+        "status": "ERRO",
+        "motivo": "Data incorreta em A2 — esperado '21/05/2026 A 21/05/2026', encontrado 'Data de posição: 21/05/2025 a 21/05/2025'",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:09",
+        "data_auditada": "22/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3425,
+            "cedentes_unicos": 123,
+            "recebiveis_a_vencer": 3000,
+            "recebiveis_vencidos": 426
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:09",
+        "data_auditada": "22/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 39,
+            "cedentes_unicos": 8
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:09",
+        "data_auditada": "22/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 83,
+            "cedentes_unicos": 28,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 56,
+                "BAIXA POR DEPOSITO CEDENTE": 19,
+                "LIQUIDAÇÃO EM CARTÓRIO": 6,
+                "LIQUIDAÇÃO PARCIAL": 1,
+                "ABATIMENTO CONCEDIDO": 1
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:09",
+        "data_auditada": "21/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:50",
+        "data_auditada": "22/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 104577,
+            "cedentes_unicos": 1516,
+            "recebiveis_a_vencer": 95626,
+            "recebiveis_vencidos": 8952
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:50",
+        "data_auditada": "22/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Aquisições",
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 22-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Opera FIDC\\Reporting\\2026\\Arquivos Base\\Aquisições' (possível dia sem movimento)",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:50",
+        "data_auditada": "22/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Liquidados",
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 22-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Opera FIDC\\Reporting\\2026\\Arquivos Base\\Liquidados' (possível dia sem movimento)",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:50",
+        "data_auditada": "21/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:51",
+        "data_auditada": "21/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Estoque",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 21/05/2026, encontrado 21/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:51",
+        "data_auditada": "21/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Aquisições",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 21/05/2026, encontrado 21/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:51",
+        "data_auditada": "21/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Liquidados",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 21/05/2026, encontrado 21/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:51",
+        "data_auditada": "20/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Carteira",
+        "status": "ERRO",
+        "motivo": "Data incorreta em A2 — esperado '20/05/2026 A 20/05/2026', encontrado 'Data de posição: 20/05/2025 a 20/05/2025'",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:53",
+        "data_auditada": "21/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3467,
+            "cedentes_unicos": 123,
+            "recebiveis_a_vencer": 3033,
+            "recebiveis_vencidos": 435
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:53",
+        "data_auditada": "21/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 32,
+            "cedentes_unicos": 5
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:53",
+        "data_auditada": "21/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 76,
+            "cedentes_unicos": 31,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 41,
+                "BAIXA POR DEPOSITO CEDENTE": 31,
+                "LIQUIDAÇÃO EM CARTÓRIO": 4
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:46:53",
+        "data_auditada": "20/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:36",
+        "data_auditada": "21/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 104132,
+            "cedentes_unicos": 1513,
+            "recebiveis_a_vencer": 94921,
+            "recebiveis_vencidos": 9212
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:36",
+        "data_auditada": "21/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 3513,
+            "cedentes_unicos": 142
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:37",
+        "data_auditada": "21/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2262,
+            "cedentes_unicos": 449,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 1809,
+                "BAIXA POR DEPOSITO SACADO": 186,
+                "BAIXA POR DEPOSITO CEDENTE": 131,
+                "BAIXA POR RECOMPRA": 79,
+                "LIQUIDAÇÃO EM CARTÓRIO": 41,
+                "LIQUIDAÇÃO PARCIAL": 11,
+                "ABATIMENTO CONCEDIDO": 3,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 2
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:39",
+        "data_auditada": "20/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:41",
+        "data_auditada": "20/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Estoque",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 20/05/2026, encontrado 20/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:41",
+        "data_auditada": "20/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Aquisições",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 20/05/2026, encontrado 20/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:41",
+        "data_auditada": "20/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Liquidados",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 20/05/2026, encontrado 20/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:41",
+        "data_auditada": "19/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Carteira",
+        "status": "ERRO",
+        "motivo": "Data incorreta em A2 — esperado '19/05/2026 A 19/05/2026', encontrado 'Data de posição: 19/05/2025 a 19/05/2025'",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:43",
+        "data_auditada": "20/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3511,
+            "cedentes_unicos": 124,
+            "recebiveis_a_vencer": 3087,
+            "recebiveis_vencidos": 425
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:43",
+        "data_auditada": "20/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 63,
+            "cedentes_unicos": 11
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:43",
+        "data_auditada": "20/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 58,
+            "cedentes_unicos": 29,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 52,
+                "BAIXA POR DEPOSITO CEDENTE": 3,
+                "BAIXA POR RECOMPRA": 1,
+                "LIQUIDAÇÃO EM CARTÓRIO": 1,
+                "LIQUIDAÇÃO PARCIAL": 1
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:47:43",
+        "data_auditada": "19/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Carteira",
+        "status": "ERRO",
+        "motivo": "Fundo incorreto — esperado 'ALVORADA' em A1, encontrado 'CLIENTE: ARTICO FIDC'",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:49",
+        "data_auditada": "20/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 102865,
+            "cedentes_unicos": 1523,
+            "recebiveis_a_vencer": 93781,
+            "recebiveis_vencidos": 9085
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:50",
+        "data_auditada": "20/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 4386,
+            "cedentes_unicos": 159
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:50",
+        "data_auditada": "20/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 3411,
+            "cedentes_unicos": 520,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 2323,
+                "BAIXA POR DEPOSITO SACADO": 450,
+                "BAIXA POR DEPOSITO CEDENTE": 325,
+                "BAIXA DE CHEQUE": 171,
+                "BAIXA POR RECOMPRA": 89,
+                "LIQUIDAÇÃO EM CARTÓRIO": 31,
+                "LIQUIDAÇÃO PARCIAL": 15,
+                "ABATIMENTO CONCEDIDO": 5,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 2
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:50",
+        "data_auditada": "19/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:52",
+        "data_auditada": "19/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Estoque",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 19/05/2026, encontrado 19/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:52",
+        "data_auditada": "19/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Aquisições",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 19/05/2026, encontrado 19/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:52",
+        "data_auditada": "19/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Liquidados",
+        "status": "ERRO",
+        "motivo": "Data incorreta — esperado 19/05/2026, encontrado 19/05/2025",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:52",
+        "data_auditada": "18/05/2026",
+        "fundo": "Ártico",
+        "arquivo": "Carteira",
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 18-05 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:53",
+        "data_auditada": "19/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 3505,
+            "cedentes_unicos": 121,
+            "recebiveis_a_vencer": 3080,
+            "recebiveis_vencidos": 426
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:53",
+        "data_auditada": "19/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 91,
+            "cedentes_unicos": 5
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:53",
+        "data_auditada": "19/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 54,
+            "cedentes_unicos": 19,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 40,
+                "BAIXA POR RECOMPRA": 7,
+                "BAIXA POR DEPOSITO CEDENTE": 6,
+                "LIQUIDAÇÃO PARCIAL": 1
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:48:53",
+        "data_auditada": "18/05/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:49:30",
+        "data_auditada": "19/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_recebiveis": 101868,
+            "cedentes_unicos": 1520,
+            "recebiveis_a_vencer": 92084,
+            "recebiveis_vencidos": 9785
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:49:30",
+        "data_auditada": "19/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_operacoes": 2585,
+            "cedentes_unicos": 150
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:49:30",
+        "data_auditada": "19/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": "",
+        "metricas": {
+            "total_liquidacoes": 2488,
+            "cedentes_unicos": 423,
+            "ocorrencias": {
+                "LIQUIDAÇÃO NORMAL": 2075,
+                "BAIXA POR DEPOSITO SACADO": 165,
+                "BAIXA POR RECOMPRA": 110,
+                "BAIXA POR DEPOSITO CEDENTE": 89,
+                "LIQUIDAÇÃO EM CARTÓRIO": 29,
+                "ABATIMENTO CONCEDIDO": 8,
+                "LIQUIDAÇÃO PARCIAL": 7,
+                "RECOMPRA PARCIAL SEM ADIANTAMENTO": 5
+            }
+        }
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "19:49:31",
+        "data_auditada": "18/05/2026",
+        "fundo": "Opera",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": "",
+        "metricas": null
     }
 ]
