@@ -1,12 +1,14 @@
 import os
 import json
 import logging
+import argparse
 import subprocess
 import unicodedata
 import holidays
 import openpyxl
 import pandas as pd
 
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 
 # ==========================================================
@@ -91,15 +93,31 @@ def obter_dia_util_retroativo(n):
             encontrados += 1
     return d
 
-D1 = obter_dia_util_retroativo(1)
-D2 = obter_dia_util_retroativo(2)
 
-STR_NOME_D1 = D1.strftime("%d-%m")
-STR_NOME_D2 = D2.strftime("%d-%m")
+@dataclass
+class Datas:
+    d1: datetime
+    d2: datetime
+    nome_d1: str
+    nome_d2: str
+    planilha_d1_br: str
+    planilha_d1_iso: str
+    planilha_d2_br: str
 
-STR_PLANILHA_D1_BR  = D1.strftime("%d/%m/%Y")
-STR_PLANILHA_D1_ISO = D1.strftime("%Y-%m-%d")
-STR_PLANILHA_D2_BR  = D2.strftime("%d/%m/%Y")
+
+def obter_datas(i: int) -> Datas:
+    """Retorna o contexto de datas para o i-ésimo dia útil retroativo."""
+    d1 = obter_dia_util_retroativo(i)
+    d2 = obter_dia_util_retroativo(i + 1)
+    return Datas(
+        d1=d1,
+        d2=d2,
+        nome_d1=d1.strftime("%d-%m"),
+        nome_d2=d2.strftime("%d-%m"),
+        planilha_d1_br=d1.strftime("%d/%m/%Y"),
+        planilha_d1_iso=d1.strftime("%Y-%m-%d"),
+        planilha_d2_br=d2.strftime("%d/%m/%Y"),
+    )
 
 # ==========================================================
 # RESULTADOS
@@ -107,9 +125,9 @@ STR_PLANILHA_D2_BR  = D2.strftime("%d/%m/%Y")
 
 resultado_final = []
 
-def registrar(fundo, arquivo, status, motivo=""):
+def registrar(fundo, arquivo, status, datas: Datas, motivo=""):
     agora = datetime.now()
-    data_auditada = STR_PLANILHA_D2_BR if arquivo == "Carteira" else STR_PLANILHA_D1_BR
+    data_auditada = datas.planilha_d2_br if arquivo == "Carteira" else datas.planilha_d1_br
 
     resultado_final.append({
         "data_execucao": agora.strftime("%Y-%m-%d"),
@@ -194,15 +212,15 @@ def parse_data_flexivel(valor):
 # FUNÇÕES DE AUDITORIA
 # ==========================================================
 
-def auditar_estoque(fundo):
+def auditar_estoque(fundo, datas: Datas):
     nome = fundo["nome"]
     try:
         pasta = os.path.join(fundo["pasta"], "Estoques")
-        arquivo = localizar_arquivo_exigente(pasta, "Estoque", STR_NOME_D1)
+        arquivo = localizar_arquivo_exigente(pasta, "Estoque", datas.nome_d1)
 
         if not arquivo:
-            registrar(nome, "Estoque", "AVISO",
-                      f"Arquivo não encontrado para {STR_NOME_D1} em '{pasta}'")
+            registrar(nome, "Estoque", "AVISO", datas,
+                      f"Arquivo não encontrado para {datas.nome_d1} em '{pasta}'")
             return
 
         log.info(f"  [{nome}] Lendo Estoque: {os.path.basename(arquivo)}")
@@ -237,29 +255,29 @@ def auditar_estoque(fundo):
 
         val_data = ws.cell(row=2, column=coluna_data).value
         data_planilha = parse_data_flexivel(val_data)
-        data_esperada = D1.date()
+        data_esperada = datas.d1.date()
 
         if data_planilha != data_esperada:
             raise ValueError(
-                f"Data incorreta — esperado {STR_PLANILHA_D1_BR}, "
+                f"Data incorreta — esperado {datas.planilha_d1_br}, "
                 f"encontrado {data_planilha.strftime('%d/%m/%Y')}"
             )
 
-        registrar(nome, "Estoque", "OK")
+        registrar(nome, "Estoque", "OK", datas)
 
     except Exception as e:
-        registrar(nome, "Estoque", "ERRO", str(e))
+        registrar(nome, "Estoque", "ERRO", datas, str(e))
 
 
-def auditar_aquisicoes(fundo):
+def auditar_aquisicoes(fundo, datas: Datas):
     nome = fundo["nome"]
     try:
         pasta = os.path.join(fundo["pasta"], "Aquisições")
-        arquivo = localizar_arquivo_exigente(pasta, "Aquisi", STR_NOME_D1)
+        arquivo = localizar_arquivo_exigente(pasta, "Aquisi", datas.nome_d1)
 
         if not arquivo:
-            registrar(nome, "Aquisições", "AVISO",
-                      f"Arquivo não encontrado para {STR_NOME_D1} em '{pasta}' "
+            registrar(nome, "Aquisições", "AVISO", datas,
+                      f"Arquivo não encontrado para {datas.nome_d1} em '{pasta}' "
                       f"(possível dia sem movimento)")
             return
 
@@ -284,29 +302,29 @@ def auditar_aquisicoes(fundo):
         # Verificar data (coluna índice 2)
         val_data = df.iloc[0, 2]
         data_planilha = parse_data_flexivel(val_data)
-        data_esperada = D1.date()
+        data_esperada = datas.d1.date()
 
         if data_planilha != data_esperada:
             raise ValueError(
-                f"Data incorreta — esperado {STR_PLANILHA_D1_BR}, "
+                f"Data incorreta — esperado {datas.planilha_d1_br}, "
                 f"encontrado {data_planilha.strftime('%d/%m/%Y')}"
             )
 
-        registrar(nome, "Aquisições", "OK")
+        registrar(nome, "Aquisições", "OK", datas)
 
     except Exception as e:
-        registrar(nome, "Aquisições", "ERRO", str(e))
+        registrar(nome, "Aquisições", "ERRO", datas, str(e))
 
 
-def auditar_liquidados(fundo):
+def auditar_liquidados(fundo, datas: Datas):
     nome = fundo["nome"]
     try:
         pasta = os.path.join(fundo["pasta"], "Liquidados")
-        arquivo = localizar_arquivo_exigente(pasta, "Liquidados", STR_NOME_D1)
+        arquivo = localizar_arquivo_exigente(pasta, "Liquidados", datas.nome_d1)
 
         if not arquivo:
-            registrar(nome, "Liquidados", "AVISO",
-                      f"Arquivo não encontrado para {STR_NOME_D1} em '{pasta}' "
+            registrar(nome, "Liquidados", "AVISO", datas,
+                      f"Arquivo não encontrado para {datas.nome_d1} em '{pasta}' "
                       f"(possível dia sem movimento)")
             return
 
@@ -331,29 +349,29 @@ def auditar_liquidados(fundo):
         # Verificar data (coluna índice 1)
         val_data = df.iloc[0, 1]
         data_planilha = parse_data_flexivel(val_data)
-        data_esperada = D1.date()
+        data_esperada = datas.d1.date()
 
         if data_planilha != data_esperada:
             raise ValueError(
-                f"Data incorreta — esperado {STR_PLANILHA_D1_BR}, "
+                f"Data incorreta — esperado {datas.planilha_d1_br}, "
                 f"encontrado {data_planilha.strftime('%d/%m/%Y')}"
             )
 
-        registrar(nome, "Liquidados", "OK")
+        registrar(nome, "Liquidados", "OK", datas)
 
     except Exception as e:
-        registrar(nome, "Liquidados", "ERRO", str(e))
+        registrar(nome, "Liquidados", "ERRO", datas, str(e))
 
 
-def auditar_carteira(fundo):
+def auditar_carteira(fundo, datas: Datas):
     nome = fundo["nome"]
     try:
         pasta = os.path.join(fundo["pasta"], "Carteiras")
-        arquivo = localizar_arquivo_exigente(pasta, "Carteira", STR_NOME_D2)
+        arquivo = localizar_arquivo_exigente(pasta, "Carteira", datas.nome_d2)
 
         if not arquivo:
-            registrar(nome, "Carteira", "AVISO",
-                      f"Arquivo não encontrado para {STR_NOME_D2} em '{pasta}'")
+            registrar(nome, "Carteira", "AVISO", datas,
+                      f"Arquivo não encontrado para {datas.nome_d2} em '{pasta}'")
             return
 
         log.info(f"  [{nome}] Lendo Carteira: {os.path.basename(arquivo)}")
@@ -377,34 +395,53 @@ def auditar_carteira(fundo):
             )
 
         # A2 deve conter o período no formato "DD/MM/YYYY A DD/MM/YYYY"
-        data_esperada_planilha = normalizar(f"{STR_PLANILHA_D2_BR} A {STR_PLANILHA_D2_BR}")
+        data_esperada_planilha = normalizar(
+            f"{datas.planilha_d2_br} A {datas.planilha_d2_br}"
+        )
         if data_esperada_planilha not in linha2:
             raise ValueError(
                 f"Data incorreta em A2 — esperado "
-                f"'{STR_PLANILHA_D2_BR} A {STR_PLANILHA_D2_BR}', "
+                f"'{datas.planilha_d2_br} A {datas.planilha_d2_br}', "
                 f"encontrado '{ws['A2'].value}'"
             )
 
-        registrar(nome, "Carteira", "OK")
+        registrar(nome, "Carteira", "OK", datas)
 
     except Exception as e:
-        registrar(nome, "Carteira", "ERRO", str(e))
+        registrar(nome, "Carteira", "ERRO", datas, str(e))
 
 # ==========================================================
 # EXECUÇÃO PRINCIPAL
 # ==========================================================
 
 def main():
-    log.info("=" * 60)
-    log.info("Iniciando auditoria")
-    log.info(f"D1 = {STR_PLANILHA_D1_BR}  |  D2 = {STR_PLANILHA_D2_BR}")
+    parser = argparse.ArgumentParser(description="Auditoria de fundos FIDC")
+    parser.add_argument(
+        "--reprocessar", type=int, default=1, metavar="N",
+        help="Número de dias úteis retroativos a auditar (padrão: 1)"
+    )
+    args = parser.parse_args()
+    n = args.reprocessar
 
-    for fundo in FUNDOS:
-        log.info(f"\nAuditando {fundo['nome']}")
-        auditar_estoque(fundo)
-        auditar_aquisicoes(fundo)
-        auditar_liquidados(fundo)
-        auditar_carteira(fundo)
+    log.info("=" * 60)
+    if n == 1:
+        log.info("Iniciando auditoria")
+    else:
+        log.info(f"Iniciando reprocessamento — {n} dias úteis retroativos")
+
+    for i in range(1, n + 1):
+        datas = obter_datas(i)
+        if n > 1:
+            log.info(f"\n── Dia {i}/{n}: D1 = {datas.planilha_d1_br}  |  D2 = {datas.planilha_d2_br}")
+        else:
+            log.info(f"D1 = {datas.planilha_d1_br}  |  D2 = {datas.planilha_d2_br}")
+
+        for fundo in FUNDOS:
+            log.info(f"\nAuditando {fundo['nome']}")
+            auditar_estoque(fundo, datas)
+            auditar_aquisicoes(fundo, datas)
+            auditar_liquidados(fundo, datas)
+            auditar_carteira(fundo, datas)
 
     # ==========================================================
     # HISTÓRICO
@@ -505,24 +542,30 @@ def main():
     )
 
     # ==========================================================
-    # GIT PUSH
+    # GIT PUSH (apenas na execução diária normal)
     # ==========================================================
 
-    try:
-        subprocess.run(["git", "pull", "--rebase"], cwd=BASE_DIR, check=True)
-        subprocess.run(
-            ["git", "add", "dados.json", "historico.json"],
-            cwd=BASE_DIR, check=True
+    if n > 1:
+        log.warning(
+            f"Modo reprocessamento ({n} dias): git push omitido. "
+            "Faça o push manualmente quando necessário."
         )
-        subprocess.run(
-            ["git", "commit", "-m",
-             f"auditoria {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
-            cwd=BASE_DIR, check=True
-        )
-        subprocess.run(["git", "push"], cwd=BASE_DIR, check=True)
-        log.info("Git push realizado com sucesso.")
-    except subprocess.CalledProcessError as e:
-        log.error(f"Git falhou: {e}")
+    else:
+        try:
+            subprocess.run(["git", "pull", "--rebase"], cwd=BASE_DIR, check=True)
+            subprocess.run(
+                ["git", "add", "dados.json", "historico.json"],
+                cwd=BASE_DIR, check=True
+            )
+            subprocess.run(
+                ["git", "commit", "-m",
+                 f"auditoria {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
+                cwd=BASE_DIR, check=True
+            )
+            subprocess.run(["git", "push"], cwd=BASE_DIR, check=True)
+            log.info("Git push realizado com sucesso.")
+        except subprocess.CalledProcessError as e:
+            log.error(f"Git falhou: {e}")
 
 
 if __name__ == "__main__":
