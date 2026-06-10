@@ -172,9 +172,10 @@ main {
     border-radius: 50%;
 }
 
-.dot.ok     { background: #639922; }
-.dot.erro   { background: #A32D2D; }
-.dot.vazio  { background: #d1d5db; }
+.dot.ok    { background: #639922; }
+.dot.aviso { background: #BA7517; }
+.dot.erro  { background: #A32D2D; }
+.dot.vazio { background: #d1d5db; }
 
 .cardTaxa {
     font-size: 24px;
@@ -199,10 +200,10 @@ main {
 .cardMeta {
     font-size: 11.5px;
     color: #9ca3af;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* ── PAINEL BRANCO (chart + history) ─────────────────────── */
+/* ── PAINEL BRANCO ───────────────────────────────────────── */
 
 .painelBranco {
     background: white;
@@ -211,28 +212,76 @@ main {
     box-shadow: 0 1px 3px rgba(0,0,0,.08);
 }
 
-.secaoTitulo {
+/* ── CHART ───────────────────────────────────────────────── */
+
+.chartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chartTitulo {
     font-size: 14px;
     font-weight: 600;
     color: #374151;
-    margin-bottom: 16px;
     letter-spacing: -.1px;
 }
 
-/* ── CHART ───────────────────────────────────────────────── */
+.filtrosDatas {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filtrosDatas label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.filtrosDatas input[type="date"] {
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #374151;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    transition: border-color .12s;
+}
+
+.filtrosDatas input[type="date"]:focus {
+    border-color: #2563eb;
+}
 
 .chartWrap {
     height: 250px;
     position: relative;
 }
 
-/* ── FILTROS DA TABELA ───────────────────────────────────── */
+/* ── HISTÓRICO ───────────────────────────────────────────── */
+
+.secaoTitulo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 14px;
+    letter-spacing: -.1px;
+}
 
 .filtrosTabela {
     display: flex;
     gap: 10px;
     margin-bottom: 14px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .btnGroup {
@@ -304,8 +353,9 @@ tbody tr:hover td { background: #fafafa; }
     white-space: nowrap;
 }
 
-.badge.ok   { background: #eef4e4; color: #639922; }
-.badge.erro { background: #f5e8e8; color: #A32D2D; }
+.badge.ok    { background: #eef4e4; color: #639922; }
+.badge.aviso { background: #fef4e4; color: #BA7517; }
+.badge.erro  { background: #f5e8e8; color: #A32D2D; }
 
 .motivoCell {
     color: #9ca3af;
@@ -332,6 +382,7 @@ tbody tr:hover td { background: #fafafa; }
     .kpiGrid { grid-template-columns: 1fr 1fr; }
     .headerTitulo h1 { font-size: 17px; }
     .btnHeader { padding: 5px 12px; font-size: 12px; }
+    .chartHeader { flex-direction: column; align-items: flex-start; }
 }
 
 </style>
@@ -374,27 +425,35 @@ tbody tr:hover td { background: #fafafa; }
     <!-- Fund Cards -->
     <div class="cardGrid" id="cards"></div>
 
-    <!-- Chart -->
+    <!-- Chart + Date filter -->
     <div class="painelBranco">
-        <div class="secaoTitulo">Taxa de Sucesso — últimos 10 dias úteis</div>
+        <div class="chartHeader">
+            <span class="chartTitulo">Taxa de Sucesso</span>
+            <div class="filtrosDatas">
+                <label>
+                    De
+                    <input type="date" id="inputDataInicio">
+                </label>
+                <label>
+                    Até
+                    <input type="date" id="inputDataFim">
+                </label>
+            </div>
+        </div>
         <div class="chartWrap">
             <canvas id="grafico"></canvas>
         </div>
     </div>
 
-    <!-- History (hidden until card click) -->
+    <!-- History (hidden until fund is selected) -->
     <div class="painelBranco" id="secaoHistorico" style="display:none">
         <div class="secaoTitulo" id="tituloHistorico">Histórico</div>
         <div class="filtrosTabela">
             <div class="btnGroup" id="grupoStatus">
                 <button class="btnTab ativo" data-val="">Todos</button>
                 <button class="btnTab" data-val="OK">OK</button>
+                <button class="btnTab" data-val="AVISO">Aviso</button>
                 <button class="btnTab" data-val="ERRO">Erro</button>
-            </div>
-            <div class="btnGroup" id="grupoPeriodo">
-                <button class="btnTab ativo" data-val="10">10 dias</button>
-                <button class="btnTab" data-val="30">30 dias</button>
-                <button class="btnTab" data-val="">Tudo</button>
             </div>
         </div>
         <div id="tabelaWrap"></div>
@@ -420,9 +479,8 @@ const CHART_CORES = [
 let historicoGlobal  = [];
 let dadosGlobal      = null;
 let fundoAtivo       = null;
-let modoCards        = 'todos';  // 'todos' | 'alertas'
-let filtroStatus     = '';       // '' | 'OK' | 'ERRO'
-let filtroPeriodo    = 10;       // number | null
+let modoCards        = 'todos';   // 'todos' | 'alertas'
+let filtroStatus     = '';        // '' | 'OK' | 'AVISO' | 'ERRO'
 let graficoInstancia = null;
 
 // ── Helpers ──────────────────────────────────────────────────
@@ -433,23 +491,37 @@ function parseDateBR(str) {
     return new Date(+y, +m - 1, +d);
 }
 
+// "DD/MM/YYYY" → "YYYY-MM-DD" (formato dos inputs type="date")
+function brToISO(str) {
+    const [d, m, y] = str.split('/');
+    return `${y}-${m}-${d}`;
+}
+
 function uniqueDatesSorted(registros) {
     const set = new Set(registros.map(r => r.data_auditada).filter(Boolean));
     return [...set].sort((a, b) => parseDateBR(a) - parseDateBR(b));
 }
 
-// Últimas N data_auditada distintas de um fundo
+// Últimas N data_auditada distintas de um fundo (para dots e contagem de alertas)
 function lastDates(fundo, n) {
     const regs  = historicoGlobal.filter(r => r.fundo === fundo);
     const dates = uniqueDatesSorted(regs);
     return n ? dates.slice(-n) : dates;
 }
 
-// Conta registros ERRO nas últimas N datas de um fundo
+// Conta ERROs nas últimas N datas — determina a cor do card
 function errosRecentes(fundo, n) {
     const dateSet = new Set(lastDates(fundo, n));
     return historicoGlobal.filter(
         r => r.fundo === fundo && r.status === 'ERRO' && dateSet.has(r.data_auditada)
+    ).length;
+}
+
+// Conta ERRO + AVISO nas últimas N datas — determina se aparece em "Alertas"
+function problemasRecentes(fundo, n) {
+    const dateSet = new Set(lastDates(fundo, n));
+    return historicoGlobal.filter(
+        r => r.fundo === fundo && r.status !== 'OK' && dateSet.has(r.data_auditada)
     ).length;
 }
 
@@ -460,27 +532,50 @@ function corDeFundo(fundo) {
     return COR_VERMELHO;
 }
 
-// Array de {status, data} para os últimos 5 dias — para os pontinhos
+// Array de {status, data} para os últimos 5 dias — pontinhos do card
+// AVISO é exibido em amarelo, ERRO em vermelho, OK em verde
 function dotsDeFundo(fundo) {
     const dates = lastDates(fundo, 5);
-    const dots  = dates.map(d => ({
-        data:   d,
-        status: historicoGlobal.some(
-            r => r.fundo === fundo && r.data_auditada === d && r.status === 'ERRO'
-        ) ? 'erro' : 'ok'
-    }));
-    // Preenche até 5 posições com vazio à esquerda se necessário
+    const dots  = dates.map(d => {
+        const regsNoDia = historicoGlobal.filter(
+            r => r.fundo === fundo && r.data_auditada === d
+        );
+        const temErro  = regsNoDia.some(r => r.status === 'ERRO');
+        const temAviso = regsNoDia.some(r => r.status === 'AVISO');
+        return {
+            data:   d,
+            status: temErro ? 'erro' : temAviso ? 'aviso' : 'ok'
+        };
+    });
     while (dots.length < 5) dots.unshift({ data: '', status: 'vazio' });
     return dots;
 }
 
-// Taxa de sucesso de um fundo em uma data específica (ou null se sem dados)
+// Taxa de sucesso de um fundo em uma data (ou null se sem dados)
 function taxaNoDia(fundo, data) {
     const regs = historicoGlobal.filter(
         r => r.fundo === fundo && r.data_auditada === data
     );
     if (!regs.length) return null;
     return Math.round(regs.filter(r => r.status === 'OK').length / regs.length * 100);
+}
+
+// Retorna o intervalo de datas selecionado nos inputs como strings ISO "YYYY-MM-DD"
+function getDateRange() {
+    return {
+        inicio: document.getElementById('inputDataInicio').value || null,
+        fim:    document.getElementById('inputDataFim').value    || null,
+    };
+}
+
+// Verifica se uma data_auditada "DD/MM/YYYY" está dentro do intervalo selecionado
+function inDateRange(dataAuditada) {
+    if (!dataAuditada) return false;
+    const { inicio, fim } = getDateRange();
+    const iso = brToISO(dataAuditada);
+    if (inicio && iso < inicio) return false;
+    if (fim    && iso > fim)   return false;
+    return true;
 }
 
 // ── Render KPIs ──────────────────────────────────────────────
@@ -503,7 +598,7 @@ function renderCards() {
 
     let fundos = dadosGlobal.fundos;
     if (modoCards === 'alertas') {
-        fundos = fundos.filter(f => errosRecentes(f.nome, 5) > 0);
+        fundos = fundos.filter(f => problemasRecentes(f.nome, 5) > 0);
     }
 
     if (!fundos.length) {
@@ -519,6 +614,14 @@ function renderCards() {
         const dotsHtml = dots.map(({ status, data }) =>
             `<span class="dot ${status}" title="${data}"></span>`
         ).join('');
+
+        // Falhas em vermelho, avisos em amarelo (só exibe se > 0)
+        const falhasHtml = f.falhas > 0
+            ? `<span style="color:${COR_VERMELHO};font-weight:600">${f.falhas} falha${f.falhas !== 1 ? 's' : ''}</span>`
+            : `0 falhas`;
+        const avisosHtml = f.avisos > 0
+            ? ` · <span style="color:${COR_AMARELO};font-weight:600">${f.avisos} aviso${f.avisos !== 1 ? 's' : ''}</span>`
+            : '';
 
         const card = document.createElement('div');
         card.className = 'card' + (fundoAtivo === f.nome ? ' ativo' : '');
@@ -536,18 +639,25 @@ function renderCards() {
                          style="width:${f.taxa_sucesso}%;background:${cor}"></div>
                 </div>
                 <div class="cardMeta">
-                    ${f.falhas} falha${f.falhas !== 1 ? 's' : ''}
+                    ${falhasHtml}${avisosHtml}
                     &nbsp;·&nbsp; ${f.total} auditorias
                     &nbsp;·&nbsp; ${f.dias_auditados} dias
                 </div>
             </div>`;
 
+        // Melhoria 3: clicar no fundo ativo desmarca; clicar em outro seleciona
         card.onclick = () => {
-            fundoAtivo = f.nome;
-            renderCards();
-            renderHistorico();
-            document.getElementById('secaoHistorico')
-                .scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (fundoAtivo === f.nome) {
+                fundoAtivo = null;
+                renderCards();
+                renderHistorico();
+            } else {
+                fundoAtivo = f.nome;
+                renderCards();
+                renderHistorico();
+                document.getElementById('secaoHistorico')
+                    .scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         };
 
         container.appendChild(card);
@@ -557,16 +667,28 @@ function renderCards() {
 // ── Render Gráfico ───────────────────────────────────────────
 
 function renderGrafico() {
-    const todasDatas = uniqueDatesSorted(historicoGlobal).slice(-10);
-    const labels     = todasDatas.map(d => d.slice(0, 5));   // "DD/MM"
-    const fundos     = dadosGlobal.fundos.map(f => f.nome);
+    const { inicio, fim } = getDateRange();
+
+    // Filtra as datas do historico pelo intervalo selecionado
+    let todasDatas = uniqueDatesSorted(historicoGlobal);
+    if (inicio || fim) {
+        todasDatas = todasDatas.filter(d => {
+            const iso = brToISO(d);
+            if (inicio && iso < inicio) return false;
+            if (fim    && iso > fim)   return false;
+            return true;
+        });
+    }
+
+    const labels = todasDatas.map(d => d.slice(0, 5));   // "DD/MM"
+    const fundos = dadosGlobal.fundos.map(f => f.nome);
 
     const datasets = fundos.map((nome, i) => ({
         label:            nome,
         data:             todasDatas.map(d => taxaNoDia(nome, d)),
         borderColor:      CHART_CORES[i % CHART_CORES.length],
         backgroundColor:  'transparent',
-        borderWidth:      2,
+        borderWidth:      2.5,    // Melhoria 2: espessura aumentada
         pointRadius:      3,
         pointHoverRadius: 5,
         tension:          0.35,
@@ -600,16 +722,21 @@ function renderGrafico() {
             scales: {
                 x: {
                     grid:  { color: '#f3f4f6' },
-                    ticks: { font: { size: 11 }, color: '#9ca3af' }
+                    ticks: {
+                        font:          { size: 11 },
+                        color:         '#9ca3af',
+                        maxTicksLimit: 12,
+                        autoSkip:      true,
+                    }
                 },
                 y: {
-                    min:  0,
-                    max:  100,
+                    min:          0,
+                    suggestedMax: 105,   // Melhoria 2: evita linha em 100% colada na borda
                     grid: { color: '#f3f4f6' },
                     ticks: {
                         font:     { size: 11 },
                         color:    '#9ca3af',
-                        callback: v => v + '%'
+                        callback: v => v <= 100 ? v + '%' : ''
                     }
                 }
             }
@@ -629,18 +756,16 @@ function renderHistorico() {
 
     let regs = historicoGlobal.filter(r => r.fundo === fundoAtivo);
 
-    // Filtro de período
-    if (filtroPeriodo) {
-        const dateSet = new Set(lastDates(fundoAtivo, filtroPeriodo));
-        regs = regs.filter(r => dateSet.has(r.data_auditada));
-    }
+    // Filtro de período: intervalo de datas selecionado
+    regs = regs.filter(r => inDateRange(r.data_auditada));
 
     // Filtro de status
     if (filtroStatus) {
         regs = regs.filter(r => r.status === filtroStatus);
     }
 
-    regs = regs.slice().reverse();
+    // Melhoria 5: ordena por data_auditada decrescente (mais recente primeiro)
+    regs.sort((a, b) => parseDateBR(b.data_auditada) - parseDateBR(a.data_auditada));
 
     const wrap = document.getElementById('tabelaWrap');
 
@@ -650,11 +775,15 @@ function renderHistorico() {
         return;
     }
 
+    // Melhoria 1: badge para AVISO
+    const badgeMap = {
+        'OK':    '<span class="badge ok">✓ OK</span>',
+        'AVISO': '<span class="badge aviso">⚠ Aviso</span>',
+        'ERRO':  '<span class="badge erro">✕ Erro</span>',
+    };
+
     const linhas = regs.map(r => {
-        const ok    = r.status === 'OK';
-        const badge = ok
-            ? '<span class="badge ok">✓ OK</span>'
-            : '<span class="badge erro">✕ Erro</span>';
+        const badge = badgeMap[r.status] || `<span class="badge">${r.status}</span>`;
         return `
         <tr>
             <td>${r.data_auditada || '—'}</td>
@@ -702,7 +831,7 @@ document.getElementById('btnAlertas').onclick = () => {
     renderCards();
 };
 
-// Filtro de status da tabela
+// Filtro de status da tabela (inclui AVISO)
 document.getElementById('grupoStatus').querySelectorAll('.btnTab').forEach(btn => {
     btn.onclick = () => {
         filtroStatus = btn.dataset.val;
@@ -711,14 +840,15 @@ document.getElementById('grupoStatus').querySelectorAll('.btnTab').forEach(btn =
     };
 });
 
-// Filtro de período da tabela
-document.getElementById('grupoPeriodo').querySelectorAll('.btnTab').forEach(btn => {
-    btn.onclick = () => {
-        filtroPeriodo = btn.dataset.val ? +btn.dataset.val : null;
-        ativarBtn(document.getElementById('grupoPeriodo'), btn);
-        renderHistorico();
-    };
-});
+// Inputs de data: re-renderiza gráfico e tabela ao mudar
+document.getElementById('inputDataInicio').oninput = () => {
+    renderGrafico();
+    renderHistorico();
+};
+document.getElementById('inputDataFim').oninput = () => {
+    renderGrafico();
+    renderHistorico();
+};
 
 // ── Inicialização ────────────────────────────────────────────
 
@@ -731,6 +861,30 @@ async function carregar() {
 
         dadosGlobal     = dados;
         historicoGlobal = historico;
+
+        // Melhoria 4: inicializa os inputs de data
+        const todasDatas = uniqueDatesSorted(historicoGlobal);
+        if (todasDatas.length) {
+            const minISO = brToISO(todasDatas[0]);
+            const maxISO = brToISO(todasDatas[todasDatas.length - 1]);
+
+            const inputInicio = document.getElementById('inputDataInicio');
+            const inputFim    = document.getElementById('inputDataFim');
+
+            inputInicio.min = minISO;
+            inputInicio.max = maxISO;
+            inputFim.min    = minISO;
+            inputFim.max    = maxISO;
+            inputFim.value  = maxISO;
+
+            // Padrão: últimos 30 dias a partir do máximo
+            const maxDate   = new Date(maxISO + 'T00:00:00');
+            const start30   = new Date(maxDate);
+            start30.setDate(start30.getDate() - 29);
+            const minDate   = new Date(minISO + 'T00:00:00');
+            const startFinal = start30 < minDate ? minDate : start30;
+            inputInicio.value = startFinal.toISOString().slice(0, 10);
+        }
 
         renderKPIs();
         renderCards();
