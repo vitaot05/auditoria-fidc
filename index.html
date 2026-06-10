@@ -1,345 +1,671 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Auditoria de Fundos</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    font-family:Segoe UI,Arial,sans-serif;
-    background:#f4f6f9;
-    color:#222;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f0f2f5;
+    color: #111827;
+    min-height: 100vh;
 }
 
-header{
-    background:#1f2937;
-    color:white;
-    padding:25px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+/* ── HEADER ─────────────────────────────────────────────── */
+
+header {
+    background: #1f2937;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-header h1{
-    font-size:28px;
+.headerTitulo h1 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.2px;
 }
 
-#ultimaAtualizacao{
-    font-size:14px;
-    opacity:.8;
+.headerTitulo p {
+    font-size: 12px;
+    opacity: .55;
+    margin-top: 4px;
 }
 
-.kpis{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    padding:25px 40px;
+.headerBtns {
+    display: flex;
+    gap: 6px;
 }
 
-.kpi{
-    background:white;
-    border-radius:14px;
-    padding:25px;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
+.btnHeader {
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255,255,255,.25);
+    background: transparent;
+    color: rgba(255,255,255,.75);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all .15s;
 }
 
-.kpiTitulo{
-    color:#666;
-    margin-bottom:10px;
+.btnHeader:hover { background: rgba(255,255,255,.1); }
+
+.btnHeader.ativo {
+    background: white;
+    color: #1f2937;
+    border-color: white;
+    font-weight: 600;
 }
 
-.kpiValor{
-    font-size:34px;
-    font-weight:bold;
+/* ── LAYOUT ─────────────────────────────────────────────── */
+
+main {
+    padding: 28px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.kpiErro{
-    color:#dc2626;
+/* ── KPI GRID ────────────────────────────────────────────── */
+
+.kpiGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
 }
 
-.areaFundos{
-    padding:0 40px 30px;
+.kpiCard {
+    background: #e5e8ed;
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
 
-.areaFundos h2{
-    margin-bottom:20px;
+.kpiLabel {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .4px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+.kpiNum {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
 }
 
-.card{
-    background:white;
-    border-radius:16px;
-    padding:25px;
-    cursor:pointer;
-    transition:.2s;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
-    border-left:8px solid #16a34a;
+.kpiNum.vermelho { color: #A32D2D; }
+
+/* ── FUND CARDS ──────────────────────────────────────────── */
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 14px;
 }
 
-.card:hover{
-    transform:translateY(-3px);
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    transition: transform .15s, box-shadow .15s;
 }
 
-.card.ativo{
-    outline:3px solid #2563eb;
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.11);
 }
 
-.card.erro{
-    border-left:8px solid #dc2626;
+.card.ativo {
+    outline: 2.5px solid #2563eb;
+    outline-offset: 2px;
 }
 
-.cardNome{
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:15px;
+.cardTopo { height: 5px; }
+
+.cardCorpo { padding: 18px 20px; }
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
 }
 
-.cardLinha{
-    margin:8px 0;
+.cardNome {
+    font-size: 17px;
+    font-weight: 700;
 }
 
-.detalhes{
-    padding:0 40px 40px;
+.cardDots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding-top: 3px;
 }
 
-.painel{
-    background:white;
-    border-radius:16px;
-    padding:30px;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
-    min-height:250px;
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
 }
 
-#tituloPainel{
-    margin-bottom:20px;
+.dot.ok     { background: #639922; }
+.dot.erro   { background: #A32D2D; }
+.dot.vazio  { background: #d1d5db; }
+
+.cardTaxa {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1;
 }
 
-.painelControles{
-    display:flex;
-    gap:20px;
-    align-items:center;
-    margin-bottom:16px;
-    flex-wrap:wrap;
+.progressoWrap {
+    background: #e5e7eb;
+    border-radius: 999px;
+    height: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
 }
 
-.painelControles label{
-    font-size:14px;
-    color:#555;
+.progressoBarra {
+    height: 100%;
+    border-radius: 999px;
 }
 
-.painelControles select{
-    margin-left:6px;
-    padding:4px 8px;
-    border-radius:6px;
-    border:1px solid #ccc;
-    font-size:14px;
+.cardMeta {
+    font-size: 11.5px;
+    color: #9ca3af;
+    line-height: 1.5;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:8px;
+/* ── PAINEL BRANCO (chart + history) ─────────────────────── */
+
+.painelBranco {
+    background: white;
+    border-radius: 10px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
 }
 
-th{
-    background:#1f2937;
-    color:white;
-    padding:12px;
-    text-align:left;
+.secaoTitulo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 16px;
+    letter-spacing: -.1px;
 }
 
-td{
-    padding:10px;
-    border-bottom:1px solid #ddd;
+/* ── CHART ───────────────────────────────────────────────── */
+
+.chartWrap {
+    height: 250px;
+    position: relative;
 }
 
-.ok{
-    color:#16a34a;
-    font-weight:bold;
+/* ── FILTROS DA TABELA ───────────────────────────────────── */
+
+.filtrosTabela {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
 }
 
-.erro{
-    color:#dc2626;
-    font-weight:bold;
+.btnGroup {
+    display: flex;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.msgInicial{
-    color:#666;
-    font-size:18px;
+.btnTab {
+    padding: 5px 13px;
+    border: none;
+    border-right: 1.5px solid #d1d5db;
+    background: white;
+    font-size: 12.5px;
+    cursor: pointer;
+    color: #374151;
+    transition: background .12s;
 }
 
-@media(max-width:900px){
+.btnTab:last-child { border-right: none; }
+.btnTab:hover:not(.ativo) { background: #f9fafb; }
 
-    header{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-    }
+.btnTab.ativo {
+    background: #1f2937;
+    color: white;
+    font-weight: 600;
+}
 
+/* ── TABLE ───────────────────────────────────────────────── */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead th {
+    background: #f9fafb;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 9px 14px;
+    text-align: left;
+    border-bottom: 1.5px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: #fafafa; }
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge.ok   { background: #eef4e4; color: #639922; }
+.badge.erro { background: #f5e8e8; color: #A32D2D; }
+
+.motivoCell {
+    color: #9ca3af;
+    font-size: 12px;
+    max-width: 300px;
+}
+
+.semDados {
+    text-align: center;
+    color: #9ca3af;
+    padding: 36px;
+    font-size: 13px;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+    header { padding: 16px 20px; }
+    main   { padding: 18px 20px; }
+    .kpiGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+    .kpiGrid { grid-template-columns: 1fr 1fr; }
+    .headerTitulo h1 { font-size: 17px; }
+    .btnHeader { padding: 5px 12px; font-size: 12px; }
 }
 
 </style>
-
 </head>
-
 <body>
 
 <header>
-
-    <h1>📊 Auditoria de Fundos</h1>
-
-    <div id="ultimaAtualizacao">
-        Carregando...
+    <div class="headerTitulo">
+        <h1>Auditoria de Fundos</h1>
+        <p id="ultimaAtualizacao">Carregando…</p>
     </div>
-
+    <div class="headerBtns">
+        <button class="btnHeader ativo" id="btnTodos">Todos</button>
+        <button class="btnHeader" id="btnAlertas">Alertas</button>
+    </div>
 </header>
 
-<section class="kpis">
+<main>
 
-    <div class="kpi">
-        <div class="kpiTitulo">Fundos Monitorados</div>
-        <div class="kpiValor" id="kpiFundos">—</div>
-    </div>
-
-    <div class="kpi">
-        <div class="kpiTitulo">Taxa Global</div>
-        <div class="kpiValor" id="kpiTaxa">—</div>
-    </div>
-
-    <div class="kpi">
-        <div class="kpiTitulo">Total Auditorias</div>
-        <div class="kpiValor" id="kpiTotal">—</div>
-    </div>
-
-    <div class="kpi">
-        <div class="kpiTitulo">Total Falhas</div>
-        <div class="kpiValor kpiErro" id="kpiFalhas">—</div>
-    </div>
-
-</section>
-
-<section class="areaFundos">
-
-    <h2>Fundos</h2>
-
-    <div class="cards" id="cards"></div>
-
-</section>
-
-<section class="detalhes">
-
-    <div class="painel">
-
-        <h2 id="tituloPainel">
-            Selecione um fundo
-        </h2>
-
-        <div id="conteudoPainel">
-
-            <div class="msgInicial">
-                Clique em um dos fundos acima para visualizar o histórico.
-            </div>
-
+    <!-- KPIs -->
+    <div class="kpiGrid">
+        <div class="kpiCard">
+            <span class="kpiLabel">Fundos Monitorados</span>
+            <span class="kpiNum" id="kpiFundos">—</span>
         </div>
-
+        <div class="kpiCard">
+            <span class="kpiLabel">Taxa Global</span>
+            <span class="kpiNum" id="kpiTaxa">—</span>
+        </div>
+        <div class="kpiCard">
+            <span class="kpiLabel">Total Auditorias</span>
+            <span class="kpiNum" id="kpiTotal">—</span>
+        </div>
+        <div class="kpiCard">
+            <span class="kpiLabel">Total Falhas</span>
+            <span class="kpiNum vermelho" id="kpiFalhas">—</span>
+        </div>
     </div>
 
-</section>
+    <!-- Fund Cards -->
+    <div class="cardGrid" id="cards"></div>
+
+    <!-- Chart -->
+    <div class="painelBranco">
+        <div class="secaoTitulo">Taxa de Sucesso — últimos 10 dias úteis</div>
+        <div class="chartWrap">
+            <canvas id="grafico"></canvas>
+        </div>
+    </div>
+
+    <!-- History (hidden until card click) -->
+    <div class="painelBranco" id="secaoHistorico" style="display:none">
+        <div class="secaoTitulo" id="tituloHistorico">Histórico</div>
+        <div class="filtrosTabela">
+            <div class="btnGroup" id="grupoStatus">
+                <button class="btnTab ativo" data-val="">Todos</button>
+                <button class="btnTab" data-val="OK">OK</button>
+                <button class="btnTab" data-val="ERRO">Erro</button>
+            </div>
+            <div class="btnGroup" id="grupoPeriodo">
+                <button class="btnTab ativo" data-val="10">10 dias</button>
+                <button class="btnTab" data-val="30">30 dias</button>
+                <button class="btnTab" data-val="">Tudo</button>
+            </div>
+        </div>
+        <div id="tabelaWrap"></div>
+    </div>
+
+</main>
 
 <script>
 
-let historicoGlobal = [];
-let fundoAtivo = null;
+// ── Constantes ───────────────────────────────────────────────
 
-async function carregar() {
+const COR_VERDE    = '#639922';
+const COR_AMARELO  = '#BA7517';
+const COR_VERMELHO = '#A32D2D';
 
-    try {
+const CHART_CORES = [
+    '#2563eb', '#7c3aed', '#d97706',
+    '#059669', '#db2777', '#0891b2'
+];
 
-        const [dados, historico] = await Promise.all([
-            fetch("dados.json").then(r => r.json()),
-            fetch("historico.json").then(r => r.json())
-        ]);
+// ── Estado ───────────────────────────────────────────────────
 
-        historicoGlobal = historico;
+let historicoGlobal  = [];
+let dadosGlobal      = null;
+let fundoAtivo       = null;
+let modoCards        = 'todos';  // 'todos' | 'alertas'
+let filtroStatus     = '';       // '' | 'OK' | 'ERRO'
+let filtroPeriodo    = 10;       // number | null
+let graficoInstancia = null;
 
-        document.getElementById("ultimaAtualizacao").innerText =
-            "Última atualização: " + dados.ultima_atualizacao;
+// ── Helpers ──────────────────────────────────────────────────
 
-        document.getElementById("kpiFundos").innerText =
-            dados.kpis.fundos_monitorados;
-
-        document.getElementById("kpiTaxa").innerText =
-            dados.kpis.taxa_global + "%";
-
-        document.getElementById("kpiTotal").innerText =
-            dados.kpis.total_registros;
-
-        document.getElementById("kpiFalhas").innerText =
-            dados.kpis.total_falhas;
-
-        const cards = document.getElementById("cards");
-        cards.innerHTML = "";
-
-        dados.fundos.forEach(f => {
-
-            const card = document.createElement("div");
-
-            card.className = f.falhas > 0 ? "card erro" : "card";
-
-            card.innerHTML = `
-                <div class="cardNome">${f.nome}</div>
-                <div class="cardLinha">Taxa de Sucesso: <b>${f.taxa_sucesso}%</b></div>
-                <div class="cardLinha">Falhas: <b>${f.falhas}</b></div>
-                <div class="cardLinha">Auditorias: <b>${f.total}</b></div>
-            `;
-
-            card.onclick = () => {
-
-                document.querySelectorAll(".card")
-                    .forEach(c => c.classList.remove("ativo"));
-
-                card.classList.add("ativo");
-
-                mostrarFundo(f.nome);
-
-            };
-
-            cards.appendChild(card);
-
-        });
-
-    } catch (e) {
-
-        document.getElementById("ultimaAtualizacao").innerText =
-            "Erro ao carregar dados: " + e.message;
-
-    }
-
+function parseDateBR(str) {
+    if (!str || !str.includes('/')) return new Date(0);
+    const [d, m, y] = str.split('/');
+    return new Date(+y, +m - 1, +d);
 }
 
-function renderTabela(registros) {
+function uniqueDatesSorted(registros) {
+    const set = new Set(registros.map(r => r.data_auditada).filter(Boolean));
+    return [...set].sort((a, b) => parseDateBR(a) - parseDateBR(b));
+}
 
-    if (!registros.length) {
-        return "<p style='color:#666;margin-top:12px'>Nenhum registro encontrado.</p>";
+// Últimas N data_auditada distintas de um fundo
+function lastDates(fundo, n) {
+    const regs  = historicoGlobal.filter(r => r.fundo === fundo);
+    const dates = uniqueDatesSorted(regs);
+    return n ? dates.slice(-n) : dates;
+}
+
+// Conta registros ERRO nas últimas N datas de um fundo
+function errosRecentes(fundo, n) {
+    const dateSet = new Set(lastDates(fundo, n));
+    return historicoGlobal.filter(
+        r => r.fundo === fundo && r.status === 'ERRO' && dateSet.has(r.data_auditada)
+    ).length;
+}
+
+function corDeFundo(fundo) {
+    const e = errosRecentes(fundo, 5);
+    if (e === 0)  return COR_VERDE;
+    if (e <= 3)   return COR_AMARELO;
+    return COR_VERMELHO;
+}
+
+// Array de {status, data} para os últimos 5 dias — para os pontinhos
+function dotsDeFundo(fundo) {
+    const dates = lastDates(fundo, 5);
+    const dots  = dates.map(d => ({
+        data:   d,
+        status: historicoGlobal.some(
+            r => r.fundo === fundo && r.data_auditada === d && r.status === 'ERRO'
+        ) ? 'erro' : 'ok'
+    }));
+    // Preenche até 5 posições com vazio à esquerda se necessário
+    while (dots.length < 5) dots.unshift({ data: '', status: 'vazio' });
+    return dots;
+}
+
+// Taxa de sucesso de um fundo em uma data específica (ou null se sem dados)
+function taxaNoDia(fundo, data) {
+    const regs = historicoGlobal.filter(
+        r => r.fundo === fundo && r.data_auditada === data
+    );
+    if (!regs.length) return null;
+    return Math.round(regs.filter(r => r.status === 'OK').length / regs.length * 100);
+}
+
+// ── Render KPIs ──────────────────────────────────────────────
+
+function renderKPIs() {
+    const k = dadosGlobal.kpis;
+    document.getElementById('kpiFundos').innerText = k.fundos_monitorados;
+    document.getElementById('kpiTaxa').innerText   = k.taxa_global + '%';
+    document.getElementById('kpiTotal').innerText  = k.total_registros;
+    document.getElementById('kpiFalhas').innerText = k.total_falhas;
+    document.getElementById('ultimaAtualizacao').innerText =
+        'Última atualização: ' + dadosGlobal.ultima_atualizacao;
+}
+
+// ── Render Cards ─────────────────────────────────────────────
+
+function renderCards() {
+    const container = document.getElementById('cards');
+    container.innerHTML = '';
+
+    let fundos = dadosGlobal.fundos;
+    if (modoCards === 'alertas') {
+        fundos = fundos.filter(f => errosRecentes(f.nome, 5) > 0);
     }
 
-    let html = `
+    if (!fundos.length) {
+        container.innerHTML =
+            '<p style="color:#9ca3af;font-size:13px">Nenhum fundo com alertas nos últimos 5 dias.</p>';
+        return;
+    }
+
+    fundos.forEach(f => {
+        const cor  = corDeFundo(f.nome);
+        const dots = dotsDeFundo(f.nome);
+
+        const dotsHtml = dots.map(({ status, data }) =>
+            `<span class="dot ${status}" title="${data}"></span>`
+        ).join('');
+
+        const card = document.createElement('div');
+        card.className = 'card' + (fundoAtivo === f.nome ? ' ativo' : '');
+
+        card.innerHTML = `
+            <div class="cardTopo" style="background:${cor}"></div>
+            <div class="cardCorpo">
+                <div class="cardHeader">
+                    <span class="cardNome">${f.nome}</span>
+                    <div class="cardDots">${dotsHtml}</div>
+                </div>
+                <div class="cardTaxa" style="color:${cor}">${f.taxa_sucesso}%</div>
+                <div class="progressoWrap">
+                    <div class="progressoBarra"
+                         style="width:${f.taxa_sucesso}%;background:${cor}"></div>
+                </div>
+                <div class="cardMeta">
+                    ${f.falhas} falha${f.falhas !== 1 ? 's' : ''}
+                    &nbsp;·&nbsp; ${f.total} auditorias
+                    &nbsp;·&nbsp; ${f.dias_auditados} dias
+                </div>
+            </div>`;
+
+        card.onclick = () => {
+            fundoAtivo = f.nome;
+            renderCards();
+            renderHistorico();
+            document.getElementById('secaoHistorico')
+                .scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        container.appendChild(card);
+    });
+}
+
+// ── Render Gráfico ───────────────────────────────────────────
+
+function renderGrafico() {
+    const todasDatas = uniqueDatesSorted(historicoGlobal).slice(-10);
+    const labels     = todasDatas.map(d => d.slice(0, 5));   // "DD/MM"
+    const fundos     = dadosGlobal.fundos.map(f => f.nome);
+
+    const datasets = fundos.map((nome, i) => ({
+        label:            nome,
+        data:             todasDatas.map(d => taxaNoDia(nome, d)),
+        borderColor:      CHART_CORES[i % CHART_CORES.length],
+        backgroundColor:  'transparent',
+        borderWidth:      2,
+        pointRadius:      3,
+        pointHoverRadius: 5,
+        tension:          0.35,
+        spanGaps:         true,
+    }));
+
+    if (graficoInstancia) graficoInstancia.destroy();
+
+    const ctx = document.getElementById('grafico').getContext('2d');
+    graficoInstancia = new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { boxWidth: 10, padding: 16, font: { size: 12 } }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: ctx => {
+                            const v = ctx.parsed.y;
+                            return ` ${ctx.dataset.label}: ${v !== null ? v + '%' : '—'}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid:  { color: '#f3f4f6' },
+                    ticks: { font: { size: 11 }, color: '#9ca3af' }
+                },
+                y: {
+                    min:  0,
+                    max:  100,
+                    grid: { color: '#f3f4f6' },
+                    ticks: {
+                        font:     { size: 11 },
+                        color:    '#9ca3af',
+                        callback: v => v + '%'
+                    }
+                }
+            }
+        }
+    });
+}
+
+// ── Render Histórico ─────────────────────────────────────────
+
+function renderHistorico() {
+    const secao = document.getElementById('secaoHistorico');
+    if (!fundoAtivo) { secao.style.display = 'none'; return; }
+
+    secao.style.display = '';
+    document.getElementById('tituloHistorico').innerText =
+        'Histórico — ' + fundoAtivo;
+
+    let regs = historicoGlobal.filter(r => r.fundo === fundoAtivo);
+
+    // Filtro de período
+    if (filtroPeriodo) {
+        const dateSet = new Set(lastDates(fundoAtivo, filtroPeriodo));
+        regs = regs.filter(r => dateSet.has(r.data_auditada));
+    }
+
+    // Filtro de status
+    if (filtroStatus) {
+        regs = regs.filter(r => r.status === filtroStatus);
+    }
+
+    regs = regs.slice().reverse();
+
+    const wrap = document.getElementById('tabelaWrap');
+
+    if (!regs.length) {
+        wrap.innerHTML =
+            '<div class="semDados">Nenhum registro para os filtros selecionados.</div>';
+        return;
+    }
+
+    const linhas = regs.map(r => {
+        const ok    = r.status === 'OK';
+        const badge = ok
+            ? '<span class="badge ok">✓ OK</span>'
+            : '<span class="badge erro">✕ Erro</span>';
+        return `
+        <tr>
+            <td>${r.data_auditada || '—'}</td>
+            <td style="color:#9ca3af">${r.data_execucao || '—'}</td>
+            <td>${r.arquivo}</td>
+            <td>${badge}</td>
+            <td class="motivoCell">${r.motivo || ''}</td>
+        </tr>`;
+    }).join('');
+
+    wrap.innerHTML = `
     <table>
         <thead>
             <tr>
@@ -350,83 +676,74 @@ function renderTabela(registros) {
                 <th>Motivo</th>
             </tr>
         </thead>
-        <tbody>
-    `;
-
-    registros
-        .slice()
-        .reverse()
-        .forEach(r => {
-
-            html += `
-            <tr>
-                <td>${r.data_auditada || ""}</td>
-                <td>${r.data_execucao || ""}</td>
-                <td>${r.arquivo}</td>
-                <td class="${r.status === "OK" ? "ok" : "erro"}">${r.status}</td>
-                <td>${r.motivo || ""}</td>
-            </tr>
-            `;
-
-        });
-
-    html += "</tbody></table>";
-
-    return html;
-
+        <tbody>${linhas}</tbody>
+    </table>`;
 }
 
-function filtrarTabela() {
+// ── Controles ────────────────────────────────────────────────
 
-    if (!fundoAtivo) return;
+function ativarBtn(grupo, btnClicado) {
+    grupo.querySelectorAll('.btnTab').forEach(b => b.classList.remove('ativo'));
+    btnClicado.classList.add('ativo');
+}
 
-    const filtro = document.getElementById("filtroStatus").value;
+// Header: Todos / Alertas
+document.getElementById('btnTodos').onclick = () => {
+    modoCards = 'todos';
+    document.getElementById('btnTodos').classList.add('ativo');
+    document.getElementById('btnAlertas').classList.remove('ativo');
+    renderCards();
+};
 
-    let registros = historicoGlobal.filter(x => x.fundo === fundoAtivo);
+document.getElementById('btnAlertas').onclick = () => {
+    modoCards = 'alertas';
+    document.getElementById('btnAlertas').classList.add('ativo');
+    document.getElementById('btnTodos').classList.remove('ativo');
+    renderCards();
+};
 
-    if (filtro) {
-        registros = registros.filter(x => x.status === filtro);
+// Filtro de status da tabela
+document.getElementById('grupoStatus').querySelectorAll('.btnTab').forEach(btn => {
+    btn.onclick = () => {
+        filtroStatus = btn.dataset.val;
+        ativarBtn(document.getElementById('grupoStatus'), btn);
+        renderHistorico();
+    };
+});
+
+// Filtro de período da tabela
+document.getElementById('grupoPeriodo').querySelectorAll('.btnTab').forEach(btn => {
+    btn.onclick = () => {
+        filtroPeriodo = btn.dataset.val ? +btn.dataset.val : null;
+        ativarBtn(document.getElementById('grupoPeriodo'), btn);
+        renderHistorico();
+    };
+});
+
+// ── Inicialização ────────────────────────────────────────────
+
+async function carregar() {
+    try {
+        const [dados, historico] = await Promise.all([
+            fetch('dados.json').then(r => r.json()),
+            fetch('historico.json').then(r => r.json()),
+        ]);
+
+        dadosGlobal     = dados;
+        historicoGlobal = historico;
+
+        renderKPIs();
+        renderCards();
+        renderGrafico();
+
+    } catch (e) {
+        document.getElementById('ultimaAtualizacao').innerText =
+            'Erro ao carregar dados: ' + e.message;
     }
-
-    document.getElementById("tabelaHistorico").innerHTML =
-        renderTabela(registros);
-
-}
-
-function mostrarFundo(nome) {
-
-    fundoAtivo = nome;
-
-    const registros = historicoGlobal.filter(x => x.fundo === nome);
-
-    document.getElementById("tituloPainel").innerText =
-        "Histórico — " + nome;
-
-    const controles = `
-    <div class="painelControles">
-        <div>Total de registros: <b>${registros.length}</b></div>
-        <label>Filtrar por status:
-            <select id="filtroStatus" onchange="filtrarTabela()">
-                <option value="">Todos</option>
-                <option value="OK">OK</option>
-                <option value="ERRO">ERRO</option>
-            </select>
-        </label>
-    </div>
-    <div id="tabelaHistorico"></div>
-    `;
-
-    document.getElementById("conteudoPainel").innerHTML = controles;
-
-    document.getElementById("tabelaHistorico").innerHTML =
-        renderTabela(registros);
-
 }
 
 carregar();
 
 </script>
-
 </body>
-
 </html>
