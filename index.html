@@ -363,6 +363,13 @@ tbody tr:hover td { background: #fafafa; }
     max-width: 300px;
 }
 
+.metricasCelula {
+    color: #6b7280;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: default;
+}
+
 .semDados {
     text-align: center;
     color: #9ca3af;
@@ -578,6 +585,71 @@ function inDateRange(dataAuditada) {
     return true;
 }
 
+// ── Seleção de fundo ─────────────────────────────────────────
+// Ponto único de seleção: usado pelo card onclick E pelo legend onClick do gráfico
+
+function selecionarFundo(nome) {
+    if (fundoAtivo === nome) {
+        fundoAtivo = null;
+    } else {
+        fundoAtivo = nome;
+    }
+    renderCards();
+    renderGrafico();
+    renderHistorico();
+    if (fundoAtivo) {
+        document.getElementById('secaoHistorico')
+            .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// ── Formatação de métricas ────────────────────────────────────
+
+function escapeAttr(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+                    .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function formatarMetricas(r) {
+    const m = r.metricas;
+    if (!m) return '';
+
+    const fmt = n => (n != null) ? Number(n).toLocaleString('pt-BR') : '—';
+
+    if (r.arquivo === 'Estoque') {
+        const partes = [];
+        if (m.total_recebiveis    != null) partes.push(`${fmt(m.total_recebiveis)} recebíveis`);
+        if (m.cedentes_unicos     != null) partes.push(`${fmt(m.cedentes_unicos)} cedentes`);
+        if (m.recebiveis_vencidos != null) partes.push(`${fmt(m.recebiveis_vencidos)} vencidos`);
+        const tip = m.recebiveis_a_vencer != null
+            ? `A vencer: ${fmt(m.recebiveis_a_vencer)}\nVencidos: ${fmt(m.recebiveis_vencidos)}`
+            : '';
+        return `<span class="metricasCelula" title="${escapeAttr(tip)}">${partes.join(' · ')}</span>`;
+    }
+
+    if (r.arquivo === 'Aquisições') {
+        const partes = [];
+        if (m.total_operacoes != null) partes.push(`${fmt(m.total_operacoes)} operações`);
+        if (m.cedentes_unicos != null) partes.push(`${fmt(m.cedentes_unicos)} cedentes`);
+        return `<span class="metricasCelula">${partes.join(' · ')}</span>`;
+    }
+
+    if (r.arquivo === 'Liquidados') {
+        const partes = [];
+        if (m.total_liquidacoes != null) partes.push(`${fmt(m.total_liquidacoes)} liquidações`);
+        if (m.cedentes_unicos   != null) partes.push(`${fmt(m.cedentes_unicos)} cedentes`);
+        let tip = '';
+        if (m.ocorrencias) {
+            tip = Object.entries(m.ocorrencias)
+                .map(([k, v]) => `${k}: ${fmt(v)}`)
+                .join('\n');
+        }
+        return `<span class="metricasCelula" title="${escapeAttr(tip)}">${partes.join(' · ')}</span>`;
+    }
+
+    return '';
+}
+
 // ── Render KPIs ──────────────────────────────────────────────
 
 function renderKPIs() {
@@ -645,22 +717,7 @@ function renderCards() {
                 </div>
             </div>`;
 
-        // Clicar no fundo selecionado desmarca (volta para Todos); clicar em outro filtra
-        card.onclick = () => {
-            if (fundoAtivo === f.nome) {
-                fundoAtivo = null;
-                renderCards();
-                renderGrafico();
-                renderHistorico();
-            } else {
-                fundoAtivo = f.nome;
-                renderCards();
-                renderGrafico();
-                renderHistorico();
-                document.getElementById('secaoHistorico')
-                    .scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        };
+        card.onclick = () => selecionarFundo(f.nome);
 
         container.appendChild(card);
     });
@@ -719,7 +776,7 @@ function renderGrafico() {
                 legend: {
                     position: 'bottom',
                     labels: { boxWidth: 10, padding: 16, font: { size: 12 } },
-                    onClick: () => {},  // desabilita toggle de dataset por clique na legenda
+                    onClick: (e, legendItem) => selecionarFundo(legendItem.text),
                 },
                 tooltip: {
                     callbacks: {
@@ -800,6 +857,7 @@ function renderHistorico() {
             <td>${r.arquivo}</td>
             <td>${badge}</td>
             <td class="motivoCell">${r.motivo || ''}</td>
+            <td>${formatarMetricas(r)}</td>
         </tr>`;
     }).join('');
 
@@ -812,6 +870,7 @@ function renderHistorico() {
                 <th>Arquivo</th>
                 <th>Status</th>
                 <th>Motivo</th>
+                <th>Métricas</th>
             </tr>
         </thead>
         <tbody>${linhas}</tbody>

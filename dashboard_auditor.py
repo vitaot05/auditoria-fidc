@@ -125,7 +125,7 @@ def obter_datas(i: int) -> Datas:
 
 resultado_final = []
 
-def registrar(fundo, arquivo, status, datas: Datas, motivo=""):
+def registrar(fundo, arquivo, status, datas: Datas, motivo="", metricas=None):
     agora = datetime.now()
     data_auditada = datas.planilha_d2_br if arquivo == "Carteira" else datas.planilha_d1_br
 
@@ -136,7 +136,8 @@ def registrar(fundo, arquivo, status, datas: Datas, motivo=""):
         "fundo":         fundo,
         "arquivo":       arquivo,
         "status":        status,
-        "motivo":        motivo
+        "motivo":        motivo,
+        "metricas":      metricas,
     })
 
     if status == "OK":
@@ -263,7 +264,27 @@ def auditar_estoque(fundo, datas: Datas):
                 f"encontrado {data_planilha.strftime('%d/%m/%Y')}"
             )
 
-        registrar(nome, "Estoque", "OK", datas)
+        metricas = None
+        try:
+            df_m = pd.read_excel(arquivo, skiprows=0)
+            col_cedente  = next(
+                (c for c in df_m.columns if normalizar(str(c)).startswith("DOC_CEDENTE")),
+                None
+            )
+            col_situacao = next(
+                (c for c in df_m.columns if normalizar(str(c)) == "SITUACAO_RECEBIVEL"),
+                None
+            )
+            metricas = {
+                "total_recebiveis":    len(df_m) - 1,
+                "cedentes_unicos":     int(df_m[col_cedente].nunique())              if col_cedente  else None,
+                "recebiveis_a_vencer": int((df_m[col_situacao] == "A vencer").sum()) if col_situacao else None,
+                "recebiveis_vencidos": int((df_m[col_situacao] == "Vencido").sum())  if col_situacao else None,
+            }
+        except Exception as em:
+            log.warning(f"  [{nome}] Estoque — falha ao extrair métricas: {em}")
+
+        registrar(nome, "Estoque", "OK", datas, metricas=metricas)
 
     except Exception as e:
         registrar(nome, "Estoque", "ERRO", datas, str(e))
@@ -310,7 +331,21 @@ def auditar_aquisicoes(fundo, datas: Datas):
                 f"encontrado {data_planilha.strftime('%d/%m/%Y')}"
             )
 
-        registrar(nome, "Aquisições", "OK", datas)
+        metricas = None
+        try:
+            df_full = pd.read_excel(arquivo)
+            col_cedente = next(
+                (c for c in df_full.columns if normalizar(str(c)) == "CEDENTE"),
+                None
+            )
+            metricas = {
+                "total_operacoes": len(df_full),
+                "cedentes_unicos": int(df_full[col_cedente].nunique()) if col_cedente else None,
+            }
+        except Exception as em:
+            log.warning(f"  [{nome}] Aquisições — falha ao extrair métricas: {em}")
+
+        registrar(nome, "Aquisições", "OK", datas, metricas=metricas)
 
     except Exception as e:
         registrar(nome, "Aquisições", "ERRO", datas, str(e))
@@ -357,7 +392,30 @@ def auditar_liquidados(fundo, datas: Datas):
                 f"encontrado {data_planilha.strftime('%d/%m/%Y')}"
             )
 
-        registrar(nome, "Liquidados", "OK", datas)
+        metricas = None
+        try:
+            df_full = pd.read_excel(arquivo)
+            col_cedente    = next(
+                (c for c in df_full.columns if normalizar(str(c)) == "CEDENTE"),
+                None
+            )
+            col_ocorrencia = next(
+                (c for c in df_full.columns if normalizar(str(c)) == "OCORRENCIA"),
+                None
+            )
+            ocorrencias = None
+            if col_ocorrencia is not None:
+                vc = df_full[col_ocorrencia].value_counts()
+                ocorrencias = {str(k): int(v) for k, v in vc.items()}
+            metricas = {
+                "total_liquidacoes": len(df_full),
+                "cedentes_unicos":   int(df_full[col_cedente].nunique()) if col_cedente else None,
+                "ocorrencias":       ocorrencias,
+            }
+        except Exception as em:
+            log.warning(f"  [{nome}] Liquidados — falha ao extrair métricas: {em}")
+
+        registrar(nome, "Liquidados", "OK", datas, metricas=metricas)
 
     except Exception as e:
         registrar(nome, "Liquidados", "ERRO", datas, str(e))
