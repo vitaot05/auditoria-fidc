@@ -445,9 +445,9 @@ tbody tr:hover td { background: #fafafa; }
         </div>
     </div>
 
-    <!-- History (hidden until fund is selected) -->
-    <div class="painelBranco" id="secaoHistorico" style="display:none">
-        <div class="secaoTitulo" id="tituloHistorico">Histórico</div>
+    <!-- Histórico (sempre visível) -->
+    <div class="painelBranco" id="secaoHistorico">
+        <div class="secaoTitulo" id="tituloHistorico">Histórico — Todos</div>
         <div class="filtrosTabela">
             <div class="btnGroup" id="grupoStatus">
                 <button class="btnTab ativo" data-val="">Todos</button>
@@ -645,15 +645,17 @@ function renderCards() {
                 </div>
             </div>`;
 
-        // Melhoria 3: clicar no fundo ativo desmarca; clicar em outro seleciona
+        // Clicar no fundo selecionado desmarca (volta para Todos); clicar em outro filtra
         card.onclick = () => {
             if (fundoAtivo === f.nome) {
                 fundoAtivo = null;
                 renderCards();
+                renderGrafico();
                 renderHistorico();
             } else {
                 fundoAtivo = f.nome;
                 renderCards();
+                renderGrafico();
                 renderHistorico();
                 document.getElementById('secaoHistorico')
                     .scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -681,19 +683,27 @@ function renderGrafico() {
     }
 
     const labels = todasDatas.map(d => d.slice(0, 5));   // "DD/MM"
-    const fundos = dadosGlobal.fundos.map(f => f.nome);
 
-    const datasets = fundos.map((nome, i) => ({
-        label:            nome,
-        data:             todasDatas.map(d => taxaNoDia(nome, d)),
-        borderColor:      CHART_CORES[i % CHART_CORES.length],
-        backgroundColor:  'transparent',
-        borderWidth:      2.5,    // Melhoria 2: espessura aumentada
-        pointRadius:      3,
-        pointHoverRadius: 5,
-        tension:          0.35,
-        spanGaps:         true,
-    }));
+    // Mantém a lista completa para índice de cor consistente entre seleções
+    const todosFundos    = dadosGlobal.fundos.map(f => f.nome);
+    const fundosFiltrados = fundoAtivo
+        ? todosFundos.filter(n => n === fundoAtivo)
+        : todosFundos;
+
+    const datasets = fundosFiltrados.map(nome => {
+        const idxCor = todosFundos.indexOf(nome);
+        return {
+            label:            nome,
+            data:             todasDatas.map(d => taxaNoDia(nome, d)),
+            borderColor:      CHART_CORES[idxCor % CHART_CORES.length],
+            backgroundColor:  'transparent',
+            borderWidth:      2.5,
+            pointRadius:      3,
+            pointHoverRadius: 5,
+            tension:          0.35,
+            spanGaps:         true,
+        };
+    });
 
     if (graficoInstancia) graficoInstancia.destroy();
 
@@ -708,7 +718,8 @@ function renderGrafico() {
             plugins: {
                 legend: {
                     position: 'bottom',
-                    labels: { boxWidth: 10, padding: 16, font: { size: 12 } }
+                    labels: { boxWidth: 10, padding: 16, font: { size: 12 } },
+                    onClick: () => {},  // desabilita toggle de dataset por clique na legenda
                 },
                 tooltip: {
                     callbacks: {
@@ -747,14 +758,12 @@ function renderGrafico() {
 // ── Render Histórico ─────────────────────────────────────────
 
 function renderHistorico() {
-    const secao = document.getElementById('secaoHistorico');
-    if (!fundoAtivo) { secao.style.display = 'none'; return; }
-
-    secao.style.display = '';
     document.getElementById('tituloHistorico').innerText =
-        'Histórico — ' + fundoAtivo;
+        fundoAtivo ? 'Histórico — ' + fundoAtivo : 'Histórico — Todos';
 
-    let regs = historicoGlobal.filter(r => r.fundo === fundoAtivo);
+    let regs = fundoAtivo
+        ? historicoGlobal.filter(r => r.fundo === fundoAtivo)
+        : historicoGlobal.slice();
 
     // Filtro de período: intervalo de datas selecionado
     regs = regs.filter(r => inDateRange(r.data_auditada));
@@ -889,6 +898,7 @@ async function carregar() {
         renderKPIs();
         renderCards();
         renderGrafico();
+        renderHistorico();
 
     } catch (e) {
         document.getElementById('ultimaAtualizacao').innerText =
