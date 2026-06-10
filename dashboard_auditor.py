@@ -1,5 +1,7 @@
 import os
 import json
+import subprocess
+import unicodedata
 import holidays
 import openpyxl
 import pandas as pd
@@ -95,6 +97,8 @@ resultado_final = []
 
 def registrar(fundo, arquivo, status, motivo=""):
 
+    agora = datetime.now()
+
     data_auditada = (
         STR_PLANILHA_D2_BR
         if arquivo == "Carteira"
@@ -102,8 +106,8 @@ def registrar(fundo, arquivo, status, motivo=""):
     )
 
     resultado_final.append({
-        "data_execucao": datetime.now().strftime("%Y-%m-%d"),
-        "hora_execucao": datetime.now().strftime("%H:%M:%S"),
+        "data_execucao": agora.strftime("%Y-%m-%d"),
+        "hora_execucao": agora.strftime("%H:%M:%S"),
         "data_auditada": data_auditada,
         "fundo": fundo,
         "arquivo": arquivo,
@@ -116,21 +120,8 @@ def registrar(fundo, arquivo, status, motivo=""):
 # ==========================================================
 
 def normalizar(texto):
-
-    t = str(texto).upper()
-
-    substituicoes = {
-        "Á": "A",
-        "É": "E",
-        "Í": "I",
-        "Ó": "O",
-        "Ú": "U"
-    }
-
-    for original, novo in substituicoes.items():
-        t = t.replace(original, novo)
-
-    return t
+    t = unicodedata.normalize("NFKD", str(texto).upper())
+    return "".join(c for c in t if not unicodedata.combining(c))
 
 def localizar_arquivo_exigente(pasta, prefixo, data_esperada_str):
 
@@ -197,7 +188,11 @@ def auditar_estoque(fundo):
         if coluna_data is None:
             raise Exception("Cabeçalho 'DATA_REFERENCIA' não encontrado na Linha 1")
 
-        data_planilha = str(ws.cell(row=2, column=coluna_data).value)
+        val_data = ws.cell(row=2, column=coluna_data).value
+        if isinstance(val_data, datetime):
+            data_planilha = val_data.strftime("%d/%m/%Y")
+        else:
+            data_planilha = str(val_data)
 
         if STR_PLANILHA_D1_BR not in data_planilha:
             raise Exception(f"Data incorreta ({data_planilha[:15]}). Esperado: {STR_PLANILHA_D1_BR}")
@@ -254,7 +249,12 @@ def auditar_liquidados(fundo):
         if fundo["chave"] not in nome_fundo_arq:
             raise Exception("Fundo incorreto")
 
-        data_planilha = str(df.iloc[0, 1])
+        val_data = df.iloc[0, 1]
+        if hasattr(val_data, "strftime"):
+            data_planilha = val_data.strftime("%d/%m/%Y")
+        else:
+            data_planilha = str(val_data)
+
         if STR_PLANILHA_D1_BR not in data_planilha:
             raise Exception(f"Data incorreta ({data_planilha[:15]}). Esperado: {STR_PLANILHA_D1_BR}")
 
@@ -514,3 +514,28 @@ print(
     f"Falhas: {total_erros} | "
     f"Taxa Global: {taxa_global}%"
 )
+
+# ==========================================================
+# GIT PUSH
+# ==========================================================
+
+try:
+    subprocess.run(
+        ["git", "add", "dados.json", "historico.json"],
+        cwd=BASE_DIR,
+        check=True
+    )
+    subprocess.run(
+        ["git", "commit", "-m",
+         f"auditoria {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
+        cwd=BASE_DIR,
+        check=True
+    )
+    subprocess.run(
+        ["git", "push"],
+        cwd=BASE_DIR,
+        check=True
+    )
+    print("Git push realizado com sucesso.")
+except subprocess.CalledProcessError as e:
+    print(f"Aviso: git push falhou — {e}")
