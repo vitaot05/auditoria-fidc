@@ -7126,5 +7126,113 @@
         "arquivo": "Carteira",
         "status": "OK",
         "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:15",
+        "data_auditada": "09/06/2026",
+        "fundo": "Ártico",
+        "arquivo": "Estoque",
+        "status": "ERRO",
+        "motivo": "Arquivo com data 09-06 não encontrado"
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:15",
+        "data_auditada": "09/06/2026",
+        "fundo": "Ártico",
+        "arquivo": "Aquisições",
+        "status": "ERRO",
+        "motivo": "Arquivo com data 09-06 não encontrado"
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:15",
+        "data_auditada": "09/06/2026",
+        "fundo": "Ártico",
+        "arquivo": "Liquidados",
+        "status": "ERRO",
+        "motivo": "Arquivo com data 09-06 não encontrado"
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:15",
+        "data_auditada": "08/06/2026",
+        "fundo": "Ártico",
+        "arquivo": "Carteira",
+        "status": "ERRO",
+        "motivo": "Arquivo com data 08-06 não encontrado"
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:16",
+        "data_auditada": "09/06/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:16",
+        "data_auditada": "09/06/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:16",
+        "data_auditada": "09/06/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:16",
+        "data_auditada": "08/06/2026",
+        "fundo": "Alvorada",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:42",
+        "data_auditada": "09/06/2026",
+        "fundo": "Opera",
+        "arquivo": "Estoque",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:42",
+        "data_auditada": "09/06/2026",
+        "fundo": "Opera",
+        "arquivo": "Aquisições",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:42",
+        "data_auditada": "09/06/2026",
+        "fundo": "Opera",
+        "arquivo": "Liquidados",
+        "status": "OK",
+        "motivo": ""
+    },
+    {
+        "data_execucao": "2026-06-10",
+        "hora_execucao": "18:15:42",
+        "data_auditada": "08/06/2026",
+        "fundo": "Opera",
+        "arquivo": "Carteira",
+        "status": "OK",
+        "motivo": ""
     }
 ]
