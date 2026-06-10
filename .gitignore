@@ -1,0 +1,8 @@
+# Ignorar tudo...
+*
+
+# ...exceto os arquivos do projeto
+!.gitignore
+!*.py
+!*.html
+!*.json

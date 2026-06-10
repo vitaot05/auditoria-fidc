@@ -7129,43 +7129,43 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:46",
         "data_auditada": "09/06/2026",
         "fundo": "Ártico",
         "arquivo": "Estoque",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 09-06 não encontrado"
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Estoques'"
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:46",
         "data_auditada": "09/06/2026",
         "fundo": "Ártico",
         "arquivo": "Aquisições",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 09-06 não encontrado"
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Aquisições' (possível dia sem movimento)"
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:46",
         "data_auditada": "09/06/2026",
         "fundo": "Ártico",
         "arquivo": "Liquidados",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 09-06 não encontrado"
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 09-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Liquidados' (possível dia sem movimento)"
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:46",
         "data_auditada": "08/06/2026",
         "fundo": "Ártico",
         "arquivo": "Carteira",
-        "status": "ERRO",
-        "motivo": "Arquivo com data 08-06 não encontrado"
+        "status": "AVISO",
+        "motivo": "Arquivo não encontrado para 08-06 em 'C:\\Users\\Victor Avanci\\OneDrive - BBS Capital\\BBS Capital Partners - Documentos\\01. BUs\\01. Struc Funds\\01. Credit\\01. Projetos\\Ártico FIDC\\Reporting\\2026\\Arquivos Base\\Carteiras'"
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:47",
         "data_auditada": "09/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Estoque",
@@ -7174,7 +7174,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:47",
         "data_auditada": "09/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Aquisições",
@@ -7183,7 +7183,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:47",
         "data_auditada": "09/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Liquidados",
@@ -7192,7 +7192,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:19:59",
+        "hora_execucao": "18:47:47",
         "data_auditada": "08/06/2026",
         "fundo": "Alvorada",
         "arquivo": "Carteira",
@@ -7201,7 +7201,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:20:23",
+        "hora_execucao": "18:48:11",
         "data_auditada": "09/06/2026",
         "fundo": "Opera",
         "arquivo": "Estoque",
@@ -7210,7 +7210,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:20:23",
+        "hora_execucao": "18:48:11",
         "data_auditada": "09/06/2026",
         "fundo": "Opera",
         "arquivo": "Aquisições",
@@ -7219,7 +7219,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:20:23",
+        "hora_execucao": "18:48:11",
         "data_auditada": "09/06/2026",
         "fundo": "Opera",
         "arquivo": "Liquidados",
@@ -7228,7 +7228,7 @@
     },
     {
         "data_execucao": "2026-06-10",
-        "hora_execucao": "18:20:23",
+        "hora_execucao": "18:48:11",
         "data_auditada": "08/06/2026",
         "fundo": "Opera",
         "arquivo": "Carteira",

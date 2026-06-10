@@ -1,16 +1,17 @@
 {
-    "ultima_atualizacao": "10/06/2026 18:20:23",
+    "ultima_atualizacao": "10/06/2026 18:48:11",
     "kpis": {
         "fundos_monitorados": 3,
         "taxa_global": 46.27,
         "total_registros": 804,
-        "total_falhas": 432
+        "total_falhas": 428
     },
     "fundos": [
         {
             "nome": "Alvorada",
             "taxa_sucesso": 54.48,
             "falhas": 122,
+            "avisos": 0,
             "total": 268,
             "dias_auditados": 68,
             "ultima_falha": {
@@ -23,6 +24,7 @@
             "nome": "Opera",
             "taxa_sucesso": 53.73,
             "falhas": 124,
+            "avisos": 0,
             "total": 268,
             "dias_auditados": 68,
             "ultima_falha": {
@@ -34,13 +36,14 @@
         {
             "nome": "Ártico",
             "taxa_sucesso": 30.6,
-            "falhas": 186,
+            "falhas": 182,
+            "avisos": 4,
             "total": 268,
             "dias_auditados": 68,
             "ultima_falha": {
-                "data": "08/06/2026",
+                "data": "05/06/2026",
                 "arquivo": "Carteira",
-                "motivo": "Arquivo com data 08-06 não encontrado"
+                "motivo": "Arquivo com data 05-06 não encontrado"
             }
         }
     ]
