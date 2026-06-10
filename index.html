@@ -776,7 +776,12 @@ function renderGrafico() {
                 legend: {
                     position: 'bottom',
                     labels: { boxWidth: 10, padding: 16, font: { size: 12 } },
-                    onClick: (e, legendItem) => selecionarFundo(legendItem.text),
+                    onClick: (e, legendItem) => {
+                        // Difere para não destruir a instância enquanto Chart.js
+                        // ainda está processando o próprio clique
+                        const nome = legendItem.text;
+                        setTimeout(() => selecionarFundo(nome), 0);
+                    },
                 },
                 tooltip: {
                     callbacks: {
@@ -815,12 +820,13 @@ function renderGrafico() {
 // ── Render Histórico ─────────────────────────────────────────
 
 function renderHistorico() {
-    document.getElementById('tituloHistorico').innerText =
-        fundoAtivo ? 'Histórico — ' + fundoAtivo : 'Histórico — Todos';
+    const secao = document.getElementById('secaoHistorico');
+    if (!fundoAtivo) { secao.style.display = 'none'; return; }
+    secao.style.display = '';
 
-    let regs = fundoAtivo
-        ? historicoGlobal.filter(r => r.fundo === fundoAtivo)
-        : historicoGlobal.slice();
+    document.getElementById('tituloHistorico').innerText = 'Histórico — ' + fundoAtivo;
+
+    let regs = historicoGlobal.filter(r => r.fundo === fundoAtivo);
 
     // Filtro de período: intervalo de datas selecionado
     regs = regs.filter(r => inDateRange(r.data_auditada));
@@ -957,7 +963,6 @@ async function carregar() {
         renderKPIs();
         renderCards();
         renderGrafico();
-        renderHistorico();
 
     } catch (e) {
         document.getElementById('ultimaAtualizacao').innerText =
