@@ -1,19 +1,19 @@
 {
-    "ultima_atualizacao": "10/06/2026 19:49:31",
+    "ultima_atualizacao": "11/06/2026 11:51:53",
     "kpis": {
         "fundos_monitorados": 3,
-        "taxa_global": 47.01,
-        "total_registros": 804,
-        "total_falhas": 416
+        "taxa_global": 72.57,
+        "total_registros": 864,
+        "total_falhas": 23
     },
     "fundos": [
         {
             "nome": "Alvorada",
-            "taxa_sucesso": 54.85,
-            "falhas": 121,
-            "avisos": 0,
-            "total": 268,
-            "dias_auditados": 68,
+            "taxa_sucesso": 81.94,
+            "falhas": 1,
+            "avisos": 51,
+            "total": 288,
+            "dias_auditados": 73,
             "ultima_falha": {
                 "data": "19/05/2026",
                 "arquivo": "Carteira",
@@ -22,28 +22,28 @@
         },
         {
             "nome": "Opera",
-            "taxa_sucesso": 55.6,
-            "falhas": 117,
-            "avisos": 2,
-            "total": 268,
-            "dias_auditados": 68,
+            "taxa_sucesso": 87.15,
+            "falhas": 2,
+            "avisos": 35,
+            "total": 288,
+            "dias_auditados": 73,
             "ultima_falha": {
-                "data": "03/03/2026",
-                "arquivo": "Liquidados",
-                "motivo": "Data incorreta (2026-03-03 00:0). Esperado: 03/03/2026"
+                "data": "16/03/2026",
+                "arquivo": "Estoque",
+                "motivo": "Data incorreta — esperado 16/03/2026, encontrado 17/03/2026"
             }
         },
         {
             "nome": "Ártico",
-            "taxa_sucesso": 30.6,
-            "falhas": 178,
-            "avisos": 8,
-            "total": 268,
-            "dias_auditados": 68,
+            "taxa_sucesso": 48.61,
+            "falhas": 20,
+            "avisos": 128,
+            "total": 288,
+            "dias_auditados": 73,
             "ultima_falha": {
-                "data": "19/05/2026",
+                "data": "27/02/2026",
                 "arquivo": "Liquidados",
-                "motivo": "Data incorreta — esperado 19/05/2026, encontrado 19/05/2025"
+                "motivo": "Data incorreta — esperado 27/02/2026, encontrado 02/02/2026"
             }
         }
     ]
